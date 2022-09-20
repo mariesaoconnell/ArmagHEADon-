@@ -16,12 +16,13 @@
 		[🟢] -- Global function listening for answer clicks
 		[🟢] -- Global checkAnswer function
 		[] -- styling
+		[] -- answer clicked, delay, return back to main screen
 
 [] -- Game Over
 
 == STRETCH GOALS ==
 
-[] -- timer
+[] -- visible timer
 [] -- computer opponent
 
 -------------------------------------------------------------------------------------------------------------------*/
@@ -30,6 +31,11 @@
 let chosenAnswer = null;
 let pointValueChosen = null;
 let chosenCategoryObj = null;
+
+let scoreValue = document.querySelector('#playerScoreValue');
+
+let playerScore = 0
+
 
 // QUESTION DIV STAGE
 const questionDiv = document.querySelector('#questionDiv');
@@ -47,11 +53,24 @@ const ans4 = document.querySelector('#ans4');
 
 // CHECK ANSWER FUNCTION
 function checkAnswer(){
+	// DISABLE BUTTONS
+
   if(chosenAnswer.isCorrect){
+		playerScore += pointValueChosen;
+
+		scoreValue.innerText = playerScore;
+
     console.log('correct answer')
   } else{
     console.log('Wrong')
   }
+	setTimeout(backToMain, 8000)
+}
+
+// BACK TO MAIN FUNC
+function backToMain(){
+	questionDiv.style.visibility = "hidden"
+	gameStageDiv.style.visibility = "visible"
 }
 
 // ANSWERS CLICKED
@@ -74,7 +93,6 @@ window.addEventListener('click', (event) => {
     checkAnswer();
   }
 });
-
 
 
 // ==== CATEGORY SPECIFIC ====
