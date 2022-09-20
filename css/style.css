@@ -68,9 +68,10 @@ footer {
 }
 
 #qAnswers {
-  height: 30%;
+  height: 50%;
 }
 
 #qTable{
   background-color: blueviolet;
+  height: 100%;
 }

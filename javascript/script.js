@@ -5,6 +5,7 @@
 // SELECTED ANSWER
 
 let chosenAnswer = null;
+let pointValueChosen = null;
 
 // QUESTION DIV STAGE
 
@@ -28,26 +29,42 @@ const jokesObj = {
 	100: {
 		category: 'Jokes',
 		question: 'Question 1',
-		answers: ['Answer 1', 'Answer 2', 'Answer 3', 'Answer 4'],
-		correctAns: 'Answer 1',
+		answers: [
+			{ value: 'Answer 1', isCorrect: false },
+			{ value: 'Answer 2', isCorrect: true },
+			{ value: 'Answer 3', isCorrect: false },
+			{ value: 'Answer 4', isCorrect: false },
+		],
 	},
 	200: {
 		category: 'Jokes',
 		question: 'Question 2',
-		answers: ['Answer 1', 'Answer 2', 'Answer 3', 'Answer 4'],
-		// correctAns: ,
+		answers: [
+			{ value: 'Answer 1', isCorrect: false },
+			{ value: 'Answer 2', isCorrect: true },
+			{ value: 'Answer 3', isCorrect: false },
+			{ value: 'Answer 4', isCorrect: false },
+		],
 	},
 	300: {
 		category: 'Jokes',
 		question: 'Question 3',
-		answers: ['Answer 1', 'Answer 2', 'Answer 3', 'Answer 4'],
-		// correctAns: answers[0],
+		answers: [
+			{ value: 'Answer 1', isCorrect: false },
+			{ value: 'Answer 2', isCorrect: true },
+			{ value: 'Answer 3', isCorrect: false },
+			{ value: 'Answer 4', isCorrect: false },
+		],
 	},
 	400: {
 		category: 'Jokes',
 		question: 'Question 4',
-		answers: ['Answer 1', 'Answer 2', 'Answer 3', 'Answer 4'],
-		// correctAns: answers[0],
+		answers: [
+			{ value: 'Answer 1', isCorrect: false },
+			{ value: 'Answer 2', isCorrect: true },
+			{ value: 'Answer 3', isCorrect: false },
+			{ value: 'Answer 4', isCorrect: false },
+		],
 	},
 };
 
@@ -59,29 +76,57 @@ function jokesClicked(key){
   qCategory.innerText = (jokesObj[key].category);
   qQuestion.innerText = (jokesObj[key]).question;
 
-  ans1.value = ansArr[0];
-  ans2.value = ansArr[1];
-  ans3.value = ansArr[2];
-  ans4.value = ansArr[3];
+  ans1.value = ansArr[0].value;
+  ans2.value = ansArr[1].value;
+  ans3.value = ansArr[2].value;
+  ans4.value = ansArr[3].value;
 
-  // CHECK IF ANSWER IS CORRECT
+  pointValueChosen = key;
 
+  console.log(`pointValueChosen: ${pointValueChosen}`)
+  console.log(`Chosen Ans ${chosenAnswer}`)
 };
 
-jokesClicked(100)
+// INVOKE JOKESCLICKED FUNC FOR TESTING
+jokesClicked(200)
 
-function checkAnswer(el){
-  chosenAnswer = el.value;
 
-  if(chosenAnswer == jokesObj.answers){
+// CHECK ANSWER FUNCTION
 
+function checkAnswer(){
+  if(chosenAnswer.isCorrect){
+    console.log('correct answer')
+  } else{
+    console.log('Wrong')
   }
 }
 
 // JOKES CLICKED EVENT LISTENERS
+
 j100Btn.addEventListener('click', ()=>{
- jokesClicked(100);
-})
+ jokesClicked(100);})
+
+window.addEventListener('click', (event) => {
+
+	if (event.target === ans1) {
+    chosenAnswer = jokesObj[pointValueChosen].answers[0];
+		checkAnswer();
+
+	} else if (event.target === ans2) {
+    chosenAnswer = jokesObj[pointValueChosen].answers[1];
+    checkAnswer();
+
+	} else if (event.target === ans3) {
+		chosenAnswer = jokesObj[pointValueChosen].answers[2];
+		checkAnswer();
+
+	} else if (event.target == ans4) {
+		chosenAnswer = jokesObj[pointValueChosen].answers[3];
+		checkAnswer();
+	}
+});
+
+
 j200Btn.addEventListener('click', ()=>{
  jokesClicked(200);
 })
@@ -91,6 +136,9 @@ j300Btn.addEventListener('click', ()=>{
 j400Btn.addEventListener('click', ()=>{
  jokesClicked(400);
 })
+
+// ANSWER CLICKED EVENT LISTENERS
+
 
 // ---------------------------------------
 
