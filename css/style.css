@@ -3,36 +3,44 @@ body {
   max-width: 1200px;
   display: flex;
   flex-direction: column;
+  height: 100vh;
   margin: 0 auto;
 }
 
 #heading{
-  margin: 0 auto;
+  /* margin: auto; */
   text-align: center;
   background-color: aquamarine;
 }
 
-table {
-  margin: 50px auto;
+main {
+  margin: 0 auto;
+}
+
+#mainTable {
+  margin: 40px auto;
   color: white;
   background-color: black;
-  width: 1000px;
+  width: 1200px;
+  height: 800px;
   padding: 20px;
   border: solid 2px red;
 }
 
-#gameStage, footer {
 
-}
 
 th, td {
   border: solid 2px red;
   text-align: center;
-  padding: 20px;
+}
+
+td>input {
+  height: 100%;
+  width: 100%;
 }
 
 footer {
-  width: 1000px;
+  width: 1200px;
   color: white;
   display: flex;
   justify-content: space-between;
@@ -48,12 +56,11 @@ footer {
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 20px;
-  width:1000px;
+  margin-top: 0;
+  width:1200px;
   height: 600px;
   display: flex;
   flex-direction: column;
-
 }
 
 #qCategory {
@@ -73,7 +80,8 @@ footer {
 
 #qTable{
   background-color: blueviolet;
-  height: 100%;
+  width: 1200px;
+  height: 350px;
 }
 
 #questionDiv{
