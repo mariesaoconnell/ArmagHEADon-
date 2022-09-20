@@ -1,0 +1,28 @@
+body {
+  background-color: darkblue;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+#heading{
+  margin: 0 auto;
+  text-align: center;
+  background-color: aquamarine;
+}
+
+table {
+  margin: 50px auto;
+  color: white;
+  background-color: black;
+  width: 1000px;
+  padding: 20px;
+  border: solid 2px red;
+}
+
+th, td {
+  border: solid 2px red;
+  text-align: center;
+  padding: 20px;
+}

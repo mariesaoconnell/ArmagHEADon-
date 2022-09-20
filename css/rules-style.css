@@ -1,0 +1,24 @@
+body {
+  background-color: darkblue;
+  color: white;
+  max-width: 1200px;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+#mainRules{
+  margin: 0 auto;
+  text-align: center;
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
