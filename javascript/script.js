@@ -2,6 +2,19 @@
 
 // COMPUTER GENERATED NUMBERS
 
+// SELECTED ANSWER
+
+let chosenAnswer = null;
+
+// QUESTION DIV STAGE
+
+const qCategory = document.querySelector('#qCategory');
+const qQuestion = document.querySelector('#qQuestion');
+
+ const ans1 = document.querySelector('#ans1');
+ const ans2 = document.querySelector('#ans2');
+ const ans3 = document.querySelector('#ans3');
+ const ans4 = document.querySelector('#ans4');
 
 // JOKE BLOCK WORKING
 
@@ -12,16 +25,58 @@ const j400Btn = document.querySelector('#j400');
 
 // RICKING JOKES
 const jokesObj = {
-  100:"Jokes for 100",
-  200:"Jokes for 200",
-  300:"Jokes for 300",
-  400:"Jokes for 400",
+	100: {
+		category: 'Jokes',
+		question: 'Question 1',
+		answers: ['Answer 1', 'Answer 2', 'Answer 3', 'Answer 4'],
+		correctAns: 'Answer 1',
+	},
+	200: {
+		category: 'Jokes',
+		question: 'Question 2',
+		answers: ['Answer 1', 'Answer 2', 'Answer 3', 'Answer 4'],
+		// correctAns: ,
+	},
+	300: {
+		category: 'Jokes',
+		question: 'Question 3',
+		answers: ['Answer 1', 'Answer 2', 'Answer 3', 'Answer 4'],
+		// correctAns: answers[0],
+	},
+	400: {
+		category: 'Jokes',
+		question: 'Question 4',
+		answers: ['Answer 1', 'Answer 2', 'Answer 3', 'Answer 4'],
+		// correctAns: answers[0],
+	},
 };
 
 // JOKES CLICKED FUNCTION
 function jokesClicked(key){
-  console.log(jokesObj[key]);
+  let newObj = jokesObj[key];
+  let ansArr = newObj.answers;
+
+  qCategory.innerText = (jokesObj[key].category);
+  qQuestion.innerText = (jokesObj[key]).question;
+
+  ans1.value = ansArr[0];
+  ans2.value = ansArr[1];
+  ans3.value = ansArr[2];
+  ans4.value = ansArr[3];
+
+  // CHECK IF ANSWER IS CORRECT
+
 };
+
+jokesClicked(100)
+
+function checkAnswer(el){
+  chosenAnswer = el.value;
+
+  if(chosenAnswer == jokesObj.answers){
+
+  }
+}
 
 // JOKES CLICKED EVENT LISTENERS
 j100Btn.addEventListener('click', ()=>{

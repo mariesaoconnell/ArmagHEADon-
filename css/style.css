@@ -21,6 +21,10 @@ table {
   border: solid 2px red;
 }
 
+#gameStage, footer {
+  visibility: hidden;
+}
+
 th, td {
   border: solid 2px red;
   text-align: center;
@@ -33,4 +37,40 @@ footer {
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
+}
+
+
+/* QUESTION STYLING */
+#questionDiv {
+  position: absolute;
+  background-color: aqua;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  width:1000px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+#qCategory {
+  height: 20%;
+  text-align: center;
+  font-size: 40px;
+  padding-top: 20px;
+}
+#qQuestion{
+  height: 30%;
+  text-align: center;
+}
+
+#qAnswers {
+  height: 30%;
+}
+
+#qTable{
+  background-color: blueviolet;
 }
