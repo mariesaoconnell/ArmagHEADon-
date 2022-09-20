@@ -1,5 +1,7 @@
 body {
-  background-color: darkblue;
+  background-image: url('https://i.ibb.co/MRR6xTH/RM-page-header-background1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
   max-width: 1200px;
   display: flex;
   flex-direction: column;
@@ -56,7 +58,7 @@ footer {
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 0;
+  margin-top: 40px;
   width:1200px;
   height: 600px;
   display: flex;

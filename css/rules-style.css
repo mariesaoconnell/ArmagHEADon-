@@ -1,7 +1,10 @@
 body {
-  background-color: darkblue;
+  background-image: url('https://i.ibb.co/MRR6xTH/RM-page-header-background1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
   color: white;
   max-width: 1200px;
+  height: 100vh;
 }
 
 h1 {
