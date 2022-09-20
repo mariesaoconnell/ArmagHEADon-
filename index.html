@@ -6,8 +6,9 @@
 
  <!-- LINK STYLE SHEET -->
   <link rel="stylesheet" href="./css/style.css">
+
 <!-- LINK SCRIPT -->
-  <script src="./javascript/script.js"></script>
+  <script defer src="./javascript/script.js"></script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -32,37 +33,38 @@
         </tr>
 
         <tr>
-          <td> <input type="button" onclick="" value="100 Points"></td>
-          <td> 100 POINTS</td>
-          <td> 100 POINTS</td>
-          <td> 100 POINTS</td>
+          <td> <input id="j100" type="button" value="100 Points"></td>
+          <td> <input id="100" type="button" value="100 Points"></td>
+          <td> <input id="100" type="button" value="100 Points"></td>
+          <td> <input id="100" type="button" value="100 Points"></td>
+
         </tr>
 
         <tr>
-          <td> 200 POINTS</td>
-          <td> 200 POINTS</td>
-          <td> 200 POINTS</td>
-          <td> 200 POINTS</td>
+          <td> <input id="j200" type="button" onclick="" value="200 Points"></td>
+          <td> <input type="button" onclick="" value="200 Points"></td>
+          <td> <input type="button" onclick="" value="200 Points"></td>
+          <td> <input type="button" onclick="" value="200 Points"></td>
         </tr>
 
         <tr>
-          <td> 300 POINTS</td>
-          <td> 300 POINTS</td>
-          <td> 300 POINTS</td>
-          <td> 300 POINTS</td>
+          <td> <input id="j300" type="button" value="300 Points"></td>
+          <td> <input type="button" onclick="" value="300 Points"></td>
+          <td> <input type="button" onclick="" value="300 Points"></td>
+          <td> <input type="button" onclick="" value="300 Points"></td>
         </tr>
 
         <tr>
-          <td> 400 POINTS</td>
-          <td> 400 POINTS</td>
-          <td> 400 POINTS</td>
-          <td> 400 POINTS</td>
+          <td> <input id="j400" type="button" onclick="" value="400 Points"></td>
+          <td> <input type="button" onclick="" value="400 Points"></td>
+          <td> <input type="button" onclick="" value="400 Points"></td>
+          <td> <input type="button" onclick="" value="400 Points"></td>
         </tr>
       </table>
     </div>
 
   </main>
 
-  <footer> </footer>
+  <footer> Player Score: <span id="playerScoreValue"></span> Computer Score: <span id="computerScoreValue"></span></footer>
 </body>
 </html>

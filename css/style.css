@@ -26,3 +26,11 @@ th, td {
   text-align: center;
   padding: 20px;
 }
+
+footer {
+  width: 1000px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
