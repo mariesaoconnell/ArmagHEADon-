@@ -16,7 +16,7 @@
 		[🟢] -- Global function listening for answer clicks
 		[🟢] -- Global checkAnswer function
 		[] -- styling
-		
+
 [] -- Game Over
 
 == STRETCH GOALS ==
@@ -25,19 +25,22 @@
 [] -- computer opponent
 
 -------------------------------------------------------------------------------------------------------------------*/
+// GLOBAL VARIABLES
 
 let chosenAnswer = null;
 let pointValueChosen = null;
 let chosenCategoryObj = null;
 
 // QUESTION DIV STAGE
+const questionDiv = document.querySelector('#questionDiv');
 const qCategory = document.querySelector('#qCategory');
 const qQuestion = document.querySelector('#qQuestion');
+const gameStageDiv = document.querySelector('#gameStage');
 
- const ans1 = document.querySelector('#ans1');
- const ans2 = document.querySelector('#ans2');
- const ans3 = document.querySelector('#ans3');
- const ans4 = document.querySelector('#ans4');
+const ans1 = document.querySelector('#ans1');
+const ans2 = document.querySelector('#ans2');
+const ans3 = document.querySelector('#ans3');
+const ans4 = document.querySelector('#ans4');
 
 
 // ==== GLOBAL FUNCTIONS / EVENT LISTENERS ====
@@ -152,15 +155,22 @@ function jokesClicked(key){
 // JOKE BUTTON CLICKED
 j100Btn.addEventListener('click', ()=>{
  jokesClicked(100);
+ gameStageDiv.style.visibility="hidden";
+ questionDiv.style.visibility="visible";
+
 });
 j200Btn.addEventListener('click', ()=>{
  jokesClicked(200);
+ gameStageDiv.style.visibility = 'hidden';
 });
 j300Btn.addEventListener('click', ()=>{
  jokesClicked(300);
+ gameStageDiv.style.visibility = 'hidden';
 });
 j400Btn.addEventListener('click', ()=>{
  jokesClicked(400);
+ gameStageDiv.style.visibility = 'hidden';
+
 });
 // jokesClicked(100)
 // ---------------------------------------

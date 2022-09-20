@@ -22,7 +22,7 @@ table {
 }
 
 #gameStage, footer {
-  visibility: hidden;
+
 }
 
 th, td {
@@ -74,4 +74,8 @@ footer {
 #qTable{
   background-color: blueviolet;
   height: 100%;
+}
+
+#questionDiv{
+  visibility: hidden;
 }
