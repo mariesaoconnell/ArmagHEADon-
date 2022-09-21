@@ -103,6 +103,8 @@ footer {
   flex-direction: column;
   border-radius: 25px;
   box-shadow: 0 0 30px 30px rgb(48, 0, 93);
+
+visibility: hidden;
 }
 
 #qCategory {
@@ -131,13 +133,12 @@ footer {
 }
 
 #qTable>tr{
-
   overflow: hidden;
 }
 
-#questionDiv, #gameStage, #heading{
+/* #questionDiv, #gameStage, #heading{
   display: none;
-}
+} */
 
 .answerBttn{
   background-color: black;
@@ -158,13 +159,15 @@ border: solid 5px lime;
   background-color: black;
   color: white;
   width: 1200px;
-  height: 800px;
+  height: 850px;
   border-radius: 50px 50px 0 0;
   box-shadow: 0 0 50px 30px rgb(0, 0, 0);
   margin: auto;
   display: flex;
   flex-direction: column;
   text-align: center;
+  visibility: hidden;
+  position: absolute;
 }
 
 #right-answer-image{
@@ -172,5 +175,5 @@ border: solid 5px lime;
 }
 
 #right-answer-p {
-  padding: 20px;
+  padding: 40px;
 }

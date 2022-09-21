@@ -38,19 +38,42 @@ let playerScore = 0
 let questionsLeft = 16;
 
 
-// QUESTION DIV STAGE
+// QUESTION DIV STAGES
 const questionDiv = document.querySelector('#questionDiv');
 const qCategory = document.querySelector('#qCategory');
 const qQuestion = document.querySelector('#qQuestion');
-const gameStageDiv = document.querySelector('#gameStage');
 
+// MAIN STAGE
+const gameStageDiv = document.querySelector('#gameStage');
+const mainGameTable = document.querySelector('#mainTable');
+
+// CORRECT ANSWER STAGE
+const correctAnsDiv = document.querySelector('#right-answer-react');
+
+// WRONG ANSWER STAGE
+const wrongAnsDiv = document.querySelector('#wrong-answer-image');
+
+
+// ANSWER BUTTONS ON QUESTION DIV STAGE
 const ans1 = document.querySelector('#ans1');
 const ans2 = document.querySelector('#ans2');
 const ans3 = document.querySelector('#ans3');
 const ans4 = document.querySelector('#ans4');
 
+// REACTION DOM ELEMENTS
+const rightAnswerImg = document.querySelector('#right-answer-image');
+const wrongAnswerImg = document.querySelector('#right-answer-image');
+
+// REACTION VARIABLES
+let rightAnswerReact = 1;
+let wrongAnswerReact = 1;
+
+// REACTION COUNTDOWN
+const rightCount = document.querySelector('#right-countdown');
+
 // ==== GLOBAL FUNCTIONS / EVENT LISTENERS ====
 
+// 🟢 QUESTIONS LEFT FUNCTION -- DETERMINES IF ALL QUESTIONS HAVE BEEN ANSWERED
 function questionsLeftFunc(){
 	if(questionsLeft<=0){
 		alert('gameover!')
@@ -58,22 +81,61 @@ function questionsLeftFunc(){
 	console.log(questionsLeft)
 }
 
+// 🟢 CORRECT ANSWER REACTION FUNCTION
+
+function correctAns(){
+	// CHANGES PLAYER VIEW
+	// mainGameTable.style.display="none";
+	questionDiv.style.visibility="hidden";
+	correctAnsDiv.style.visibility="visible";
+
+	playerScore += pointValueChosen; // adds points
+	scoreValue.innerText = playerScore; // updates score
+
+	// handles reaction image, iterates through assets/right images
+	if(rightAnswerReact>6){
+		rightAnswerReact = 1;
+		rightAnswerImg.src = `./assets/right/right-answer${rightAnswerReact}.gif`;
+	} else {
+		rightAnswerImg.src = `./assets/right/right-answer${rightAnswerReact}.gif`;
+	}
+	rightAnswerReact++;
+	console.log(rightAnswerReact)
+		// event.target.style.background = 'black';
+
+		// COUNT DOWN VARIABLE
+		rightCount.innerText = 5;
+
+		// COUNT DOWN VARIABLE
+		setInterval(()=>{
+
+			rightCount.innerText = (parseInt(rightCount.innerText))-1;
+
+			if(parseInt(rightCount.innerText)<=0){
+				backToMain();
+			}
+			// console.log(rightCount.innerText);
+		}, 2000);
+}
+
+// CORRECT ANS TEST
+// correctAns();
+
 // 🟢 CHECK ANSWER FUNCTION
 function checkAnswer(event){
+
+	// CHANGES QUESTIONS LEFT
 	questionsLeft = questionsLeft - 1;
+
+	// CHECKS ANSWER BLOCK
   if(chosenAnswer.isCorrect){
-		playerScore += pointValueChosen;
-		scoreValue.innerText = playerScore;
-		// event.target.style.backgroundColor="lime";
-		alert('Correct!')
+		correctAns()
     console.log('correct answer')
   } else{
 		// event.target.style.backgroundColor = 'red';
 		alert('Wrong!')
     console.log('Wrong')
   }
-	event.target.style.background="black"
-	backToMain();
 }
 
 // 🟢 TOGGLE HOVER FUNC ON MAIN
@@ -88,8 +150,10 @@ function checkAnswer(event){
 // 🟢 BACK TO MAIN FUNC
 function backToMain(){
 	questionsLeftFunc();
-	questionDiv.style.visibility = "hidden"
-	gameStageDiv.style.visibility = "visible"
+	questionDiv.style.visibility = "hidden";
+	gameStageDiv.style.visibility = "visible";
+	mainGameTable.style.visibility = "visible";
+	correctAnsDiv.style.visibility="hidden"
 }
 
 // 🟢 ANSWERS CLICKED
@@ -170,8 +234,8 @@ const jokesObj = {
 function jokesClicked(key){
   chosenCategoryObj = jokesObj;
   pointValueChosen = key;
+
   let ansArr = chosenCategoryObj[pointValueChosen].answers;
-  console.log(`ans array ${ansArr}`)
 
   qCategory.innerText = (chosenCategoryObj[key].category);
   qQuestion.innerText = chosenCategoryObj[key].question;
@@ -186,9 +250,6 @@ function jokesClicked(key){
   console.log(`Chosen Ans ${chosenAnswer}`)
 };
 
-// INVOKE JOKESCLICKED FUNC FOR TESTING
-jokesClicked(400)
-
 // CATEGORY CLICK
 function categoryClick(event){
 	// disable clicked button & make red
@@ -201,8 +262,7 @@ function categoryClick(event){
 
 	// swaps player view
 		gameStageDiv.style.visibility = 'hidden';
-		questionDiv.style.visibility = 'visible';
-
+		questionDiv.style.visibility= 'visible';
 	// reset answer color
 }
 
@@ -225,6 +285,7 @@ j400Btn.addEventListener('click', (event)=>{
 categoryClick(event);
 });
 // jokesClicked(100)
+
 // ---------------------------------------
 
 // ==== RICK-FRENCES BLOCK ====
