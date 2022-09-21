@@ -31,6 +31,7 @@ main {
   padding: 20px;
   border: solid 4px lime;
   border-radius: 50px;
+  table-layout: fixed;
 }
 
 th, td {
@@ -82,25 +83,28 @@ footer {
 /* QUESTION STYLING */
 #questionDiv {
   position: absolute;
-  background-color: aqua;
+  background-color: rgb(48, 0, 93);
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 40px;
+  padding-top: 40px;
   width:1200px;
-  height: 800px;
+  height: 850px;
   display: flex;
   flex-direction: column;
 }
 
 #qCategory {
+  color:white;
   height: 20%;
   text-align: center;
   font-size: 40px;
   padding-top: 20px;
 }
 #qQuestion{
+  color: white;
+  font-size: 20px;
   height: 30%;
   text-align: center;
 }
@@ -112,17 +116,28 @@ footer {
 #qTable{
   background-color: blueviolet;
   width: 1200px;
-  height: 350px;
+  height: 400px;
+  table-layout:fixed;
+
+}
+
+#qTable>tr{
+
+  overflow: hidden;
 }
 
 #questionDiv{
   visibility: hidden;
 }
 
-.answerTd>input:hover {
-  background-color: pink;
+.answerBttn{
+  background-color: black;
+  color:white;
+  overflow: hidden;
 }
 
 .answerBttn:hover{
-  background-color: pink;
+box-sizing: border-box;
+width:100%;
+border: solid 5px lime;
 }

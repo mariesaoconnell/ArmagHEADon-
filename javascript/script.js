@@ -6,17 +6,17 @@
 [] -- rules menu
 		[🟢] -- button linked to Main Stage
 
-[] -- Main Stage
+[🟢] -- Main Stage
 		[🟢] -- obj will contain keys associated with a value, the value will hold the associated answers/correct ans
 		[🟢] -- event listener for every button -- upon click, Question Screen will be VISIBLE, gameStage will be HIDDEN
-		[] -- uppon button click, that category and value button will be disabled
-		[] -- score updated
+		[🟢] -- uppon button click, that category and value button will be disabled
+		[🟢] -- score updated
 
 [] -- Question Screen
 		[🟢] -- Global function listening for answer clicks
 		[🟢] -- Global checkAnswer function
 		[] -- styling
-		[] -- answer clicked, delay, return back to main screen
+		[🟢] -- answer clicked, delay, return back to main screen
 
 [] -- Game Over
 
@@ -35,6 +35,7 @@ let chosenCategoryObj = null;
 let scoreValue = document.querySelector('#playerScoreValue');
 
 let playerScore = 0
+let questionsLeft = 16;
 
 
 // QUESTION DIV STAGE
@@ -48,49 +49,67 @@ const ans2 = document.querySelector('#ans2');
 const ans3 = document.querySelector('#ans3');
 const ans4 = document.querySelector('#ans4');
 
-
 // ==== GLOBAL FUNCTIONS / EVENT LISTENERS ====
 
-// CHECK ANSWER FUNCTION
-function checkAnswer(){
-	// DISABLE BUTTONS
-
-  if(chosenAnswer.isCorrect){
-		playerScore += pointValueChosen;
-
-		scoreValue.innerText = playerScore;
-
-    console.log('correct answer')
-  } else{
-    console.log('Wrong')
-  }
-	setTimeout(backToMain, 8000)
+function questionsLeftFunc(){
+	if(questionsLeft<=0){
+		alert('gameover!')
+	}
+	console.log(questionsLeft)
 }
 
-// BACK TO MAIN FUNC
+// 🟢 CHECK ANSWER FUNCTION
+function checkAnswer(event){
+	questionsLeft = questionsLeft - 1;
+  if(chosenAnswer.isCorrect){
+		playerScore += pointValueChosen;
+		scoreValue.innerText = playerScore;
+		// event.target.style.backgroundColor="lime";
+		alert('Correct!')
+    console.log('correct answer')
+  } else{
+		// event.target.style.backgroundColor = 'red';
+		alert('Wrong!')
+    console.log('Wrong')
+  }
+	event.target.style.background="black"
+	backToMain();
+}
+
+// 🟢 TOGGLE HOVER FUNC ON MAIN
+	function toggleHover(event) {
+		if (event.target.classList.contains('mainBtn') && !(event.target.classList.contains('answerBttn'))) {
+			event.target.removeAttribute('class');
+		} else {
+			return;
+		}
+	}
+
+// 🟢 BACK TO MAIN FUNC
 function backToMain(){
+	questionsLeftFunc();
 	questionDiv.style.visibility = "hidden"
 	gameStageDiv.style.visibility = "visible"
 }
 
-// ANSWERS CLICKED
+// 🟢 ANSWERS CLICKED
 window.addEventListener('click', (event) => {
 
   if (event.target === ans1) {
     chosenAnswer = chosenCategoryObj[pointValueChosen].answers[0];
-    checkAnswer();
+    checkAnswer(event);
 
   } else if (event.target === ans2) {
     chosenAnswer = chosenCategoryObj[pointValueChosen].answers[1];
-    checkAnswer();
+    checkAnswer(event);
 
   } else if (event.target === ans3) {
     chosenAnswer = chosenCategoryObj[pointValueChosen].answers[2];
-    checkAnswer();
+    checkAnswer(event);
 
   } else if (event.target == ans4) {
     chosenAnswer = chosenCategoryObj[pointValueChosen].answers[3];
-    checkAnswer();
+    checkAnswer(event);
   }
 });
 
@@ -147,7 +166,7 @@ const jokesObj = {
 	},
 };
 
-// JOKES CLICKED FUNCTION
+// 🟢 JOKES CLICKED FUNCTION
 function jokesClicked(key){
   chosenCategoryObj = jokesObj;
   pointValueChosen = key;
@@ -168,29 +187,42 @@ function jokesClicked(key){
 };
 
 // INVOKE JOKESCLICKED FUNC FOR TESTING
-// jokesClicked(400)
+jokesClicked(400)
+
+// CATEGORY CLICK
+function categoryClick(event){
+	// disable clicked button & make red
+	 event.target.disabled = 'true';
+	 event.target.style.color = 'red';
+	 event.target.style.backgroundColor = '#333333';
+
+	// remove hover effect
+		toggleHover(event);
+
+	// swaps player view
+		gameStageDiv.style.visibility = 'hidden';
+		questionDiv.style.visibility = 'visible';
+
+	// reset answer color
+}
 
 // JOKE BUTTON CLICKED
-j100Btn.addEventListener('click', ()=>{
+j100Btn.addEventListener('click', (event)=>{
  jokesClicked(100);
- gameStageDiv.style.visibility="hidden";
- questionDiv.style.visibility="visible";
+ categoryClick(event);
 });
-j200Btn.addEventListener('click', ()=>{
- jokesClicked(200);
- gameStageDiv.style.visibility = 'hidden';
-  questionDiv.style.visibility = 'visible';
-});
-j300Btn.addEventListener('click', ()=>{
- jokesClicked(300);
- gameStageDiv.style.visibility = 'hidden';
-  questionDiv.style.visibility = 'visible';
-});
-j400Btn.addEventListener('click', ()=>{
- jokesClicked(400);
- gameStageDiv.style.visibility = 'hidden';
-  questionDiv.style.visibility = 'visible';
 
+j200Btn.addEventListener('click', (event)=>{
+ jokesClicked(200);
+categoryClick(event);
+});
+j300Btn.addEventListener('click', (event)=>{
+ jokesClicked(300);
+categoryClick(event);
+});
+j400Btn.addEventListener('click', (event)=>{
+ jokesClicked(400);
+categoryClick(event);
 });
 // jokesClicked(100)
 // ---------------------------------------
@@ -266,25 +298,21 @@ function referencesClicked(key){
 };
 
 // EVENT LISTENERS
-rf100.addEventListener('click', () =>{
+rf100.addEventListener('click', (event) =>{
   referencesClicked(100)
-	gameStageDiv.style.visibility = 'hidden';
-	questionDiv.style.visibility = 'visible';
+	categoryClick(event);
 });
-rf200.addEventListener('click', () =>{
-  referencesClicked(200)
-		gameStageDiv.style.visibility = 'hidden';
-		questionDiv.style.visibility = 'visible';
+rf200.addEventListener('click', (event) => {
+	referencesClicked(200);
+	categoryClick(event);
 });
-rf300.addEventListener('click', () =>{
-  referencesClicked(300)
-		gameStageDiv.style.visibility = 'hidden';
-		questionDiv.style.visibility = 'visible';
+rf300.addEventListener('click', (event) => {
+	referencesClicked(300);
+	categoryClick(event);
 });
-rf400.addEventListener('click', () =>{
-  referencesClicked(400)
-		gameStageDiv.style.visibility = 'hidden';
-		questionDiv.style.visibility = 'visible';
+rf400.addEventListener('click', (event) => {
+	referencesClicked(400);
+	categoryClick(event);
 });
 
 // 🟢 TEST REFERENCES CLICKED FUNC
@@ -360,26 +388,22 @@ function charactersClicked(key){
 		console.log(`pointValueChosen: ${pointValueChosen}`);
 		console.log(`Chosen Ans ${chosenAnswer}`);
 }
-jer100.addEventListener('click', ()=>{
-  charactersClicked(100)
-		gameStageDiv.style.visibility = 'hidden';
-		questionDiv.style.visibility = 'visible';
+jer100.addEventListener('click', (event) => {
+	charactersClicked(100);
+	categoryClick(event);
 });
 
-jer200.addEventListener('click', ()=>{
-  charactersClicked(200)
-		gameStageDiv.style.visibility = 'hidden';
-		questionDiv.style.visibility = 'visible';
+jer200.addEventListener('click', (event) => {
+	charactersClicked(200);
+	categoryClick(event);
 });
-jer300.addEventListener('click', ()=>{
-  charactersClicked(300)
-		gameStageDiv.style.visibility = 'hidden';
-		questionDiv.style.visibility = 'visible';
+jer300.addEventListener('click', (event) => {
+	charactersClicked(300);
+	categoryClick(event);
 });
-jer400.addEventListener('click', ()=>{
-  charactersClicked(400)
-		gameStageDiv.style.visibility = 'hidden';
-		questionDiv.style.visibility = 'visible';
+jer400.addEventListener('click', (event) => {
+	charactersClicked(400);
+	categoryClick(event);
 });
 
 // 🟢 CHARACTER BLOCK TEST
@@ -454,27 +478,23 @@ function miscClicked(key){
 		console.log(`Chosen Ans ${chosenAnswer}`);
 }
 
-mort100.addEventListener('click', ()=>{
-miscClicked(100);
-	gameStageDiv.style.visibility = 'hidden';
-	questionDiv.style.visibility = 'visible';
-})
-mort200.addEventListener('click', ()=>{
-miscClicked(200);
-	gameStageDiv.style.visibility = 'hidden';
-	questionDiv.style.visibility = 'visible';
-})
-mort300.addEventListener('click', ()=>{
-miscClicked(300);
-	gameStageDiv.style.visibility = 'hidden';
-	questionDiv.style.visibility = 'visible';
-})
+mort100.addEventListener('click', (event) => {
+	miscClicked(100);
+	categoryClick(event);
+});
+mort200.addEventListener('click', (event) => {
+	miscClicked(200);
+	categoryClick(event);
+});
+mort300.addEventListener('click', (event) => {
+	miscClicked(300);
+	categoryClick(event);
+});
 
-mort400.addEventListener('click', ()=>{
-miscClicked(400);
-	gameStageDiv.style.visibility = 'hidden';
-	questionDiv.style.visibility = 'visible';
-})
+mort400.addEventListener('click', (event) => {
+	miscClicked(400);
+	categoryClick(event);
+});
 
 // 🟢 MISC CLICKED FUNC TEST
-miscClicked(100)
+// miscClicked(100)
