@@ -1,5 +1,9 @@
 /*
 
+🚨 issues with Wrong Div
+		[⛔️] -- countdown does NOT stop when it reaches 0
+		[⛔️] -- image is not showing
+
 [✅] -- start menu
 		[🟢] -- start button linked to rules
 
@@ -22,7 +26,7 @@
 
 == STRETCH GOALS ==
 
-[] -- visible timer
+[✅] -- visible timer
 [] -- computer opponent
 
 -------------------------------------------------------------------------------------------------------------------*/
@@ -51,7 +55,7 @@ const mainGameTable = document.querySelector('#mainTable');
 const correctAnsDiv = document.querySelector('#right-answer-react');
 
 // WRONG ANSWER STAGE
-const wrongAnsDiv = document.querySelector('#wrong-answer-image');
+const wrongAnsDiv = document.querySelector('#wrong-answer-react');
 
 
 // ANSWER BUTTONS ON QUESTION DIV STAGE
@@ -70,7 +74,7 @@ let wrongAnswerReact = 1;
 
 // REACTION COUNTDOWN
 const rightCount = document.querySelector('#right-countdown');
-
+const wrongCount = document.querySelector('#wrong-countdown')
 // ==== GLOBAL FUNCTIONS / EVENT LISTENERS ====
 
 // 🟢 QUESTIONS LEFT FUNCTION -- DETERMINES IF ALL QUESTIONS HAVE BEEN ANSWERED
@@ -85,7 +89,6 @@ function questionsLeftFunc(){
 
 function correctAns(){
 	// CHANGES PLAYER VIEW
-	// mainGameTable.style.display="none";
 	questionDiv.style.visibility="hidden";
 	correctAnsDiv.style.visibility="visible";
 
@@ -114,12 +117,44 @@ function correctAns(){
 			if(parseInt(rightCount.innerText)<=0){
 				backToMain();
 			}
-			// console.log(rightCount.innerText);
+
 		}, 2000);
 }
 
 // CORRECT ANS TEST
 // correctAns();
+
+// WRONG ANSWER REACTION FUNCTION
+function wrongAns() {
+	// CHANGES PLAYER VIEW
+	questionDiv.style.visibility = 'hidden';
+	wrongAnsDiv.style.visibility = 'visible';
+
+	playerScore += pointValueChosen; // adds points
+	scoreValue.innerText = playerScore; // updates score
+
+	// handles reaction image, iterates through assets/right images
+	if (wrongAnswerReact > 4) {
+		wrongAnswerReact = 1;
+		wrongAnswerImg.src = `./assets/wrong/wrong-answer${wrongAnswerReact}.gif`;
+	} else {
+		wrongAnswerImg.src = `./assets/wrong/wrong-answer${wrongAnswerReact}.gif`;
+	}
+
+	wrongAnswerReact++;
+
+	// COUNT DOWN VARIABLE
+	wrongCount.innerText = 5;
+
+	// COUNT DOWN VARIABLE
+	setInterval(() => {
+		wrongCount.innerText = parseInt(wrongCount.innerText) - 1;
+
+		if (parseInt(wrongCount.innerText) <= 0) {
+			backToMain();
+		}
+	}, 2000);
+}
 
 // 🟢 CHECK ANSWER FUNCTION
 function checkAnswer(event){
@@ -129,11 +164,10 @@ function checkAnswer(event){
 
 	// CHECKS ANSWER BLOCK
   if(chosenAnswer.isCorrect){
-		correctAns()
+		correctAns();
     console.log('correct answer')
   } else{
-		// event.target.style.backgroundColor = 'red';
-		alert('Wrong!')
+		wrongAns();
     console.log('Wrong')
   }
 }
