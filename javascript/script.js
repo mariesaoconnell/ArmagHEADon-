@@ -175,19 +175,21 @@ j100Btn.addEventListener('click', ()=>{
  jokesClicked(100);
  gameStageDiv.style.visibility="hidden";
  questionDiv.style.visibility="visible";
-
 });
 j200Btn.addEventListener('click', ()=>{
  jokesClicked(200);
  gameStageDiv.style.visibility = 'hidden';
+  questionDiv.style.visibility = 'visible';
 });
 j300Btn.addEventListener('click', ()=>{
  jokesClicked(300);
  gameStageDiv.style.visibility = 'hidden';
+  questionDiv.style.visibility = 'visible';
 });
 j400Btn.addEventListener('click', ()=>{
  jokesClicked(400);
  gameStageDiv.style.visibility = 'hidden';
+  questionDiv.style.visibility = 'visible';
 
 });
 // jokesClicked(100)
@@ -266,15 +268,23 @@ function referencesClicked(key){
 // EVENT LISTENERS
 rf100.addEventListener('click', () =>{
   referencesClicked(100)
+	gameStageDiv.style.visibility = 'hidden';
+	questionDiv.style.visibility = 'visible';
 });
 rf200.addEventListener('click', () =>{
   referencesClicked(200)
+		gameStageDiv.style.visibility = 'hidden';
+		questionDiv.style.visibility = 'visible';
 });
 rf300.addEventListener('click', () =>{
   referencesClicked(300)
+		gameStageDiv.style.visibility = 'hidden';
+		questionDiv.style.visibility = 'visible';
 });
 rf400.addEventListener('click', () =>{
   referencesClicked(400)
+		gameStageDiv.style.visibility = 'hidden';
+		questionDiv.style.visibility = 'visible';
 });
 
 // 🟢 TEST REFERENCES CLICKED FUNC
@@ -352,16 +362,24 @@ function charactersClicked(key){
 }
 jer100.addEventListener('click', ()=>{
   charactersClicked(100)
+		gameStageDiv.style.visibility = 'hidden';
+		questionDiv.style.visibility = 'visible';
 });
 
 jer200.addEventListener('click', ()=>{
   charactersClicked(200)
+		gameStageDiv.style.visibility = 'hidden';
+		questionDiv.style.visibility = 'visible';
 });
 jer300.addEventListener('click', ()=>{
   charactersClicked(300)
+		gameStageDiv.style.visibility = 'hidden';
+		questionDiv.style.visibility = 'visible';
 });
 jer400.addEventListener('click', ()=>{
   charactersClicked(400)
+		gameStageDiv.style.visibility = 'hidden';
+		questionDiv.style.visibility = 'visible';
 });
 
 // 🟢 CHARACTER BLOCK TEST
@@ -438,16 +456,24 @@ function miscClicked(key){
 
 mort100.addEventListener('click', ()=>{
 miscClicked(100);
+	gameStageDiv.style.visibility = 'hidden';
+	questionDiv.style.visibility = 'visible';
 })
 mort200.addEventListener('click', ()=>{
 miscClicked(200);
+	gameStageDiv.style.visibility = 'hidden';
+	questionDiv.style.visibility = 'visible';
 })
 mort300.addEventListener('click', ()=>{
 miscClicked(300);
+	gameStageDiv.style.visibility = 'hidden';
+	questionDiv.style.visibility = 'visible';
 })
 
 mort400.addEventListener('click', ()=>{
 miscClicked(400);
+	gameStageDiv.style.visibility = 'hidden';
+	questionDiv.style.visibility = 'visible';
 })
 
 // 🟢 MISC CLICKED FUNC TEST

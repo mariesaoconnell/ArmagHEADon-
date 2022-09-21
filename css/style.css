@@ -1,5 +1,5 @@
 body {
-  background-image: url('https://i.ibb.co/MRR6xTH/RM-page-header-background1.png');
+  background-image: url('https://i.ibb.co/6tWj14C/Screen-Shot-2022-09-20-at-8-27-10-PM.png');
   background-repeat: no-repeat;
   background-size: cover;
   max-width: 1200px;
@@ -17,28 +17,40 @@ body {
 
 main {
   margin: 0 auto;
+  background-color: rgb(48, 0, 93, .96);
+  width: 1200px;
+  border-radius: 50px;
 }
 
 #mainTable {
   margin: 40px auto;
   color: white;
   background-color: black;
-  width: 1200px;
+  width: 1000px;
   height: 800px;
   padding: 20px;
-  border: solid 2px red;
+  border: solid 4px lime;
+  border-radius: 50px;
 }
 
-
-
 th, td {
-  border: solid 2px red;
+  border: solid 2px lime;
   text-align: center;
 }
 
 td>input {
   height: 100%;
   width: 100%;
+  font-size: 25px;
+  background-color: black;
+  color:white;
+}
+.mainBtn:hover{
+  background-image: url('https://i.ibb.co/D8WrkHT/petro-kosariekov-portal-gun-rick-and-morty2-2.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center center;
 }
 
 footer {
@@ -49,6 +61,23 @@ footer {
   margin: 0 auto;
 }
 
+#footDiv {
+  font-size: 30px;
+  padding-left: 40px;
+  padding-right: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#footDiv>p>a, #footDiv>p {
+  text-decoration: none;
+  color: white
+}
+
+#footDiv>p>a:hover {
+  color: lime;
+  text-shadow: 0 0 5px lime;
+}
 
 /* QUESTION STYLING */
 #questionDiv {
@@ -60,7 +89,7 @@ footer {
   margin-right: auto;
   margin-top: 40px;
   width:1200px;
-  height: 600px;
+  height: 800px;
   display: flex;
   flex-direction: column;
 }
@@ -88,4 +117,12 @@ footer {
 
 #questionDiv{
   visibility: hidden;
+}
+
+.answerTd>input:hover {
+  background-color: pink;
+}
+
+.answerBttn:hover{
+  background-color: pink;
 }

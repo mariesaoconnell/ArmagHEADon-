@@ -3,8 +3,9 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
-  max-width: 1200px;
+  max-width: 1000px;
   height: 100vh;
+  margin: 0 auto;
 }
 
 h1 {
@@ -24,4 +25,72 @@ li{
 a{
   text-decoration: none;
   color: white;
+
+}
+
+img {
+  width: 600px;
+  border-radius: 30px;
+}
+
+
+main{
+  background-color: black;
+  padding: 30px;
+  font-size: 30px;
+  border-radius: 50px;
+  box-shadow: inset 0 0 40px greenyellow;
+}
+
+#pRules{
+  padding:30px 20px;
+}
+
+#nxtBtn {
+height: 40px;
+width: 300px;
+font-size: 30px;
+}
+
+#gameStart {
+  visibility: hidden;
+  padding-top: 20px;
+}
+
+
+/* animation */
+#gameStart {
+  animation: pulsate 1.5s infinite alternate;
+  color: #fff;
+}
+
+h1 {
+  font-size: 4.2rem;
+}
+
+/* Flickering animation */
+@keyframes pulsate {
+  100% {
+    text-shadow:
+      0 0 4px #fff,
+      0 0 11px #fff,
+      0 0 19px #fff,
+      0 0 40px #0fa,
+      0 0 80px #0fa,
+      0 0 90px #0fa,
+      0 0 100px #0fa,
+      0 0 150px #0fa;
+  }
+
+  0% {
+    text-shadow:
+      0 0 2px #fff,
+      0 0 4px #fff,
+      0 0 6px #fff,
+      0 0 10px #0fa,
+      0 0 45px #0fa,
+      0 0 55px #0fa,
+      0 0 70px #0fa,
+      0 0 80px #0fa;
+  }
 }

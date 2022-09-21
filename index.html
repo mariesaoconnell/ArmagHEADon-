@@ -12,14 +12,13 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>JEOPARTY!</title>
+  <title>Armagheadon!</title>
 </head>
 
 <body>
-  <header> </header>
   <div id="heading">
-    <h1> Welcome to JEOPARTY</h1>
-    <hr>
+    <h1> Welcome to Armagheadon</h1>
+
   </div>
 
   <main>
@@ -31,19 +30,19 @@
 
         <table id="qTable">
           <tr>
-            <td><input id="ans1" type="button" value="">
-            <td><input id="ans2" type="button" value=""></td>
+            <td class="answerTd"><input class="answerBttn" id="ans1" type="button" value="">
+            <td class="answerTd"><input class="answerBttn" id="ans2" type="button" value=""></td>
           </tr>
           <tr>
-            <td><input id="ans3" type="button" value=""></td>
-            <td><input id="ans4" type="button" value=""></td>
+            <td class="answerTd"><input class="answerBttn" id="ans3" type="button" value=""></td>
+            <td class="answerTd"><input class="answerBttn" id="ans4" type="button" value=""></td>
           </tr>
         </table>
       </div>
     </div>
 
     <div id="gameStage">
-      <table>
+      <table id="mainTable">
         <tr>
           <th> RICKING-JOKES </th>
           <th> RICK-FRENCES </th>
@@ -52,44 +51,47 @@
         </tr>
 
         <tr>
-          <td> <input id="j100" type="button" value="100 Points"></td>
-          <td> <input id="rf100" type="button" value="100 Points"></td>
-          <td> <input id="jer100" type="button" value="100 Points"></td>
-          <td> <input id="mort100" type="button" value="100 Points"></td>
+          <td> <input class="mainBtn" id="j100" type="button" value="100 Points"></td>
+          <td> <input class="mainBtn" id="rf100" type="button" value="100 Points"></td>
+          <td> <input class="mainBtn" id="jer100" type="button" value="100 Points"></td>
+          <td> <input class="mainBtn" id="mort100" type="button" value="100 Points"></td>
 
         </tr>
 
         <tr>
-          <td> <input id="j200" type="button" onclick="" value="200 Points"></td>
-          <td> <input id="rf200" type="button" onclick="" value="200 Points"></td>
-          <td> <input id="jer200" type="button" onclick="" value="200 Points"></td>
-          <td> <input id="mort200"type="button" onclick="" value="200 Points"></td>
+          <td> <input class="mainBtn" id="j200" type="button" onclick="" value="200 Points"></td>
+          <td> <input class="mainBtn" id="rf200" type="button" onclick="" value="200 Points"></td>
+          <td> <input class="mainBtn" id="jer200" type="button" onclick="" value="200 Points"></td>
+          <td> <input class="mainBtn" id="mort200"type="button" onclick="" value="200 Points"></td>
         </tr>
 
         <tr>
-          <td> <input id="j300" type="button" value="300 Points"></td>
-          <td> <input id="rf300" type="button" onclick="" value="300 Points"></td>
-          <td> <input id="jer300" type="button" onclick="" value="300 Points"></td>
-          <td> <input id="mort300" type="button" onclick="" value="300 Points"></td>
+          <td> <input class="mainBtn" id="j300" type="button" value="300 Points"></td>
+          <td> <input class="mainBtn" id="rf300" type="button" onclick="" value="300 Points"></td>
+          <td> <input class="mainBtn" id="jer300" type="button" onclick="" value="300 Points"></td>
+          <td> <input class="mainBtn" id="mort300" type="button" onclick="" value="300 Points"></td>
         </tr>
 
         <tr>
-          <td> <input id="j400" type="button" onclick="" value="400 Points"></td>
-          <td> <input id="rf400" type="button" onclick="" value="400 Points"></td>
-          <td> <input id="jer400" type="button" onclick="" value="400 Points"></td>
-          <td> <input id="mort400" type="button" onclick="" value="400 Points"></td>
+          <td> <input class="mainBtn" id="j400" type="button" onclick="" value="400 Points"></td>
+          <td> <input class="mainBtn" id="rf400" type="button" onclick="" value="400 Points"></td>
+          <td> <input class="mainBtn" id="jer400" type="button" onclick="" value="400 Points"></td>
+          <td> <input class="mainBtn" id="mort400" type="button" onclick="" value="400 Points"></td>
         </tr>
       </table>
     </div>
 
+    <div id="footDiv">
+      <p>Player Score: <span id="playerScoreValue"></span></p>
+
+      <p>
+        <a href="">EXIT</a>
+      </p>
+
+    </div>
+
   </main>
 
-  <footer>
 
-   <div>
-      Player Score: <span id="playerScoreValue"></span>
-   </div>
-
-   </footer>
 </body>
 </html>
