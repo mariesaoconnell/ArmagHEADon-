@@ -1,8 +1,11 @@
 /*
+============================= ISSUES =================================
 
-🚨 issues with Wrong Div
-		[⛔️] -- countdown does NOT stop when it reaches 0
-		[⛔️] -- image is not showing
+🟢 issues with Wrong Div
+		[🟢] -- countdown does NOT stop when it reaches 0
+		[🟢] -- image is not showing
+
+============================== GOALS =================================
 
 [✅] -- start menu
 		[🟢] -- start button linked to rules
@@ -13,7 +16,7 @@
 [✅] -- Main Stage
 		[🟢] -- obj will contain keys associated with a value, the value will hold the associated answers/correct ans
 		[🟢] -- event listener for every button -- upon click, Question Screen will be VISIBLE, gameStage will be HIDDEN
-		[🟢] -- uppon button click, that category and value button will be disabled
+		[🟢] -- upon button click, that category and value button will be disabled
 		[🟢] -- score updated
 
 [✅] -- Question Screen
@@ -66,7 +69,7 @@ const ans4 = document.querySelector('#ans4');
 
 // REACTION DOM ELEMENTS
 const rightAnswerImg = document.querySelector('#right-answer-image');
-const wrongAnswerImg = document.querySelector('#right-answer-image');
+const wrongAnswerImg = document.querySelector('#wrong-answer-image');
 
 // REACTION VARIABLES
 let rightAnswerReact = 1;
@@ -74,7 +77,7 @@ let wrongAnswerReact = 1;
 
 // REACTION COUNTDOWN
 const rightCount = document.querySelector('#right-countdown');
-const wrongCount = document.querySelector('#wrong-countdown')
+const wrongCount = document.querySelector('#wrong-countdown');
 // ==== GLOBAL FUNCTIONS / EVENT LISTENERS ====
 
 // 🟢 QUESTIONS LEFT FUNCTION -- DETERMINES IF ALL QUESTIONS HAVE BEEN ANSWERED
@@ -103,8 +106,9 @@ function correctAns(){
 		rightAnswerImg.src = `./assets/right/right-answer${rightAnswerReact}.gif`;
 	}
 	rightAnswerReact++;
-	console.log(rightAnswerReact)
-		// event.target.style.background = 'black';
+
+	// console.log(rightAnswerReact)
+
 
 		// COUNT DOWN VARIABLE
 		rightCount.innerText = 5;
@@ -125,15 +129,13 @@ function correctAns(){
 // correctAns();
 
 // WRONG ANSWER REACTION FUNCTION
-function wrongAns() {
+function wrongAns(){
 	// CHANGES PLAYER VIEW
 	questionDiv.style.visibility = 'hidden';
 	wrongAnsDiv.style.visibility = 'visible';
 
-	playerScore += pointValueChosen; // adds points
-	scoreValue.innerText = playerScore; // updates score
-
 	// handles reaction image, iterates through assets/right images
+
 	if (wrongAnswerReact > 4) {
 		wrongAnswerReact = 1;
 		wrongAnswerImg.src = `./assets/wrong/wrong-answer${wrongAnswerReact}.gif`;
@@ -148,13 +150,15 @@ function wrongAns() {
 
 	// COUNT DOWN VARIABLE
 	setInterval(() => {
-		wrongCount.innerText = parseInt(wrongCount.innerText) - 1;
-
+		wrongCount.innerText = (parseInt(wrongCount.innerText)) - 1;
+		console.log(`wrongCount.innerText ${wrongCount.innerText}`);
 		if (parseInt(wrongCount.innerText) <= 0) {
 			backToMain();
 		}
 	}, 2000);
 }
+
+
 
 // 🟢 CHECK ANSWER FUNCTION
 function checkAnswer(event){
@@ -187,7 +191,8 @@ function backToMain(){
 	questionDiv.style.visibility = "hidden";
 	gameStageDiv.style.visibility = "visible";
 	mainGameTable.style.visibility = "visible";
-	correctAnsDiv.style.visibility="hidden"
+	correctAnsDiv.style.visibility="hidden";
+	wrongAnsDiv.style.visibility= "hidden";
 }
 
 // 🟢 ANSWERS CLICKED

@@ -23,6 +23,7 @@ body {
 main {
   margin: 60px auto;
   background-color: rgb(48, 0, 93, .96);
+  
   width: 1200px;
   border-radius: 50px;
   box-shadow: 0 0 30px 30px rgb(48,0,93);
@@ -98,7 +99,7 @@ footer {
   margin-top: -30px;
   padding-top: 40px;
   width:1200px;
-  height: 850px;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   border-radius: 25px;
