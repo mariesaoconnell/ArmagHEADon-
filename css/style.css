@@ -1,3 +1,5 @@
+/* =================================== GENERAL STYLING ====================================*/
+
 body {
   background-image: url('https://i.ibb.co/6tWj14C/Screen-Shot-2022-09-20-at-8-27-10-PM.png');
   background-repeat: no-repeat;
@@ -20,10 +22,12 @@ body {
   top: 30px;
 }
 
+/* ================================== MAIN GAME STYLING ===================================*/
+
 main {
   margin: 60px auto;
   background-color: rgb(48, 0, 93, .96);
-  
+
   width: 1200px;
   border-radius: 50px;
   box-shadow: 0 0 30px 30px rgb(48,0,93);
@@ -88,7 +92,10 @@ footer {
   text-shadow: 0 0 5px lime;
 }
 
-/* QUESTION STYLING */
+
+/* =================================== QUESTION STYLING ====================================*/
+
+
 #questionDiv {
   position: absolute;
   background-color: rgb(48, 0, 93);
@@ -104,8 +111,7 @@ footer {
   flex-direction: column;
   border-radius: 25px;
   box-shadow: 0 0 30px 30px rgb(48, 0, 93);
-
-visibility: hidden;
+  visibility: hidden;
 }
 
 #qCategory {
@@ -137,10 +143,6 @@ visibility: hidden;
   overflow: hidden;
 }
 
-/* #questionDiv, #gameStage, #heading{
-  display: none;
-} */
-
 .answerBttn{
   background-color: black;
   color:white;
@@ -151,7 +153,6 @@ visibility: hidden;
 box-sizing: border-box;
 width:100%;
 border: solid 5px lime;
-
 }
 
 /* REACTION DIV */
@@ -177,4 +178,44 @@ border: solid 5px lime;
 
 #right-answer-p {
   padding: 40px;
+}
+
+/* =================================== GAME OVER STYLING ===================================*/
+
+#game-over-div {
+    background-image: url(https://i.ibb.co/rs4Tyfc/rick-and-morty-rick.gif);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: black;
+    color: white;
+    width: 1400px;
+    height: 850px;
+    border-radius: 50px;
+    box-shadow: 0 0 50px 30px rgb(0, 0, 0);
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: absolute;
+    justify-content: space-between;
+    visibility: hidden;
+}
+
+#go-footer-div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-right: 50px;
+  padding-left: 50px;
+  color: white;
+}
+
+#go-footer-div>p>a {
+  text-decoration: none;
+  color: white;
+}
+
+#go-footer-div>p>a:hover{
+  text-decoration: none;
+  color: lime
 }

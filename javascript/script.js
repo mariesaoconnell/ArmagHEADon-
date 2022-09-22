@@ -25,16 +25,18 @@
 		[🟢] -- styling
 		[🟢] -- answer clicked, delay, return back to main screen
 
-[] -- Game Over
+[✅] -- Game Over
 
 == STRETCH GOALS ==
 
 [✅] -- visible timer
 [] -- computer opponent
 
--------------------------------------------------------------------------------------------------------------------*/
-// GLOBAL VARIABLES
 
+=====================================VARIABLES=============================*/
+
+
+// GLOBAL VARIABLES
 let chosenAnswer = null;
 let pointValueChosen = null;
 let chosenCategoryObj = null;
@@ -78,7 +80,28 @@ let wrongAnswerReact = 1;
 // REACTION COUNTDOWN
 const rightCount = document.querySelector('#right-countdown');
 const wrongCount = document.querySelector('#wrong-countdown');
-// ==== GLOBAL FUNCTIONS / EVENT LISTENERS ====
+
+// GAME OVER
+const goDiv = document.querySelector('#game-over-div');
+const goScore = document.querySelector('#game-over-score-value');
+
+const bodyElement = document.querySelector('body');
+
+
+// ================== GLOBAL FUNCTIONS / EVENT LISTENERS ====================
+
+// 🟢 GAME OVER FUNCTION
+function gameOver(){
+	correctAnsDiv.style.visibility="hidden";
+	wrongAnsDiv.style.visibility="hidden";
+	goDiv.style.visibility="visible";
+	document.querySelector('main').style.visibility="hidden";
+	goScore.innerText=playerScore;
+
+	bodyElement.style.backgroundImage="none";
+	bodyElement.style.backgroundColor="black";
+}
+
 
 // 🟢 QUESTIONS LEFT FUNCTION -- DETERMINES IF ALL QUESTIONS HAVE BEEN ANSWERED
 function questionsLeftFunc(){
@@ -91,7 +114,7 @@ function questionsLeftFunc(){
 // 🟢 CORRECT ANSWER REACTION FUNCTION
 
 function correctAns(){
-	// CHANGES PLAYER VIEW
+	// changes player view
 	questionDiv.style.visibility="hidden";
 	correctAnsDiv.style.visibility="visible";
 
@@ -107,13 +130,10 @@ function correctAns(){
 	}
 	rightAnswerReact++;
 
-	// console.log(rightAnswerReact)
-
-
-		// COUNT DOWN VARIABLE
+		// countdown variable
 		rightCount.innerText = 5;
 
-		// COUNT DOWN VARIABLE
+		// countdown timer
 		setInterval(()=>{
 
 			rightCount.innerText = (parseInt(rightCount.innerText))-1;
@@ -125,17 +145,15 @@ function correctAns(){
 		}, 2000);
 }
 
-// CORRECT ANS TEST
-// correctAns();
 
-// WRONG ANSWER REACTION FUNCTION
+// 🟢 WRONG ANSWER REACTION FUNCTION
 function wrongAns(){
-	// CHANGES PLAYER VIEW
+
+	// changes player view
 	questionDiv.style.visibility = 'hidden';
 	wrongAnsDiv.style.visibility = 'visible';
 
 	// handles reaction image, iterates through assets/right images
-
 	if (wrongAnswerReact > 4) {
 		wrongAnswerReact = 1;
 		wrongAnswerImg.src = `./assets/wrong/wrong-answer${wrongAnswerReact}.gif`;
@@ -143,12 +161,13 @@ function wrongAns(){
 		wrongAnswerImg.src = `./assets/wrong/wrong-answer${wrongAnswerReact}.gif`;
 	}
 
+	// wrong ans increment
 	wrongAnswerReact++;
 
-	// COUNT DOWN VARIABLE
+	// count down variable
 	wrongCount.innerText = 5;
 
-	// COUNT DOWN VARIABLE
+	// count down variable
 	setInterval(() => {
 		wrongCount.innerText = (parseInt(wrongCount.innerText)) - 1;
 		console.log(`wrongCount.innerText ${wrongCount.innerText}`);
@@ -159,11 +178,10 @@ function wrongAns(){
 }
 
 
-
 // 🟢 CHECK ANSWER FUNCTION
 function checkAnswer(event){
 
-	// CHANGES QUESTIONS LEFT
+	// decrements questions left
 	questionsLeft = questionsLeft - 1;
 
 	// CHECKS ANSWER BLOCK
@@ -176,6 +194,7 @@ function checkAnswer(event){
   }
 }
 
+
 // 🟢 TOGGLE HOVER FUNC ON MAIN
 	function toggleHover(event) {
 		if (event.target.classList.contains('mainBtn') && !(event.target.classList.contains('answerBttn'))) {
@@ -184,6 +203,7 @@ function checkAnswer(event){
 			return;
 		}
 	}
+
 
 // 🟢 BACK TO MAIN FUNC
 function backToMain(){
@@ -195,37 +215,54 @@ function backToMain(){
 	wrongAnsDiv.style.visibility= "hidden";
 }
 
+
 // 🟢 ANSWERS CLICKED
 window.addEventListener('click', (event) => {
-
   if (event.target === ans1) {
     chosenAnswer = chosenCategoryObj[pointValueChosen].answers[0];
     checkAnswer(event);
-
   } else if (event.target === ans2) {
     chosenAnswer = chosenCategoryObj[pointValueChosen].answers[1];
     checkAnswer(event);
-
   } else if (event.target === ans3) {
     chosenAnswer = chosenCategoryObj[pointValueChosen].answers[2];
     checkAnswer(event);
-
   } else if (event.target == ans4) {
     chosenAnswer = chosenCategoryObj[pointValueChosen].answers[3];
     checkAnswer(event);
   }
 });
 
+// 🟢 CATEGORY CLICK FUNCTION
+function categoryClick(event){
 
-// ==== CATEGORY SPECIFIC ====
+	// disable clicked button & make red
+	 event.target.disabled = 'true';
+	 event.target.style.color = 'red';
+	 event.target.style.backgroundColor = '#333333';
 
-// JOKE BLOCK CATEGORY BUTTON
+	// remove hover effect
+		toggleHover(event);
+
+	// swaps player view
+		gameStageDiv.style.visibility = 'hidden';
+		questionDiv.style.visibility= 'visible';
+}
+
+
+// ======================== CATEGORY SPECIFIC =============================
+
+
+// JOKE CATEGORY
+
+// joke buttons
 const j100Btn = document.querySelector('#j100');
 const j200Btn = document.querySelector('#j200');
 const j300Btn = document.querySelector('#j300');
 const j400Btn = document.querySelector('#j400');
 
-// JOKES OBJECT
+
+// jokes Q & A object
 const jokesObj = {
 	100: {
 		category: 'Jokes',
@@ -269,7 +306,8 @@ const jokesObj = {
 	},
 };
 
-// 🟢 JOKES CLICKED FUNCTION
+
+// 🟢 jokes clicked function
 function jokesClicked(key){
   chosenCategoryObj = jokesObj;
   pointValueChosen = key;
@@ -283,29 +321,10 @@ function jokesClicked(key){
   ans2.value = ansArr[1].value;
   ans3.value = ansArr[2].value;
   ans4.value = ansArr[3].value;
-
-
-  console.log(`pointValueChosen: ${pointValueChosen}`)
-  console.log(`Chosen Ans ${chosenAnswer}`)
 };
 
-// CATEGORY CLICK
-function categoryClick(event){
-	// disable clicked button & make red
-	 event.target.disabled = 'true';
-	 event.target.style.color = 'red';
-	 event.target.style.backgroundColor = '#333333';
 
-	// remove hover effect
-		toggleHover(event);
-
-	// swaps player view
-		gameStageDiv.style.visibility = 'hidden';
-		questionDiv.style.visibility= 'visible';
-	// reset answer color
-}
-
-// JOKE BUTTON CLICKED
+// main game jokes category event listeners
 j100Btn.addEventListener('click', (event)=>{
  jokesClicked(100);
  categoryClick(event);
@@ -323,17 +342,20 @@ j400Btn.addEventListener('click', (event)=>{
  jokesClicked(400);
 categoryClick(event);
 });
-// jokesClicked(100)
 
-// ---------------------------------------
 
-// ==== RICK-FRENCES BLOCK ====
+// ==========================================================================
+
+// REFERENCES CATEGORY
+
+
+// references buttons
 const rf100 = document.querySelector('#rf100');
 const rf200 = document.querySelector('#rf200');
 const rf300 = document.querySelector('#rf300');
 const rf400 = document.querySelector('#rf400');
 
-// OBJECT
+// references Q & A object
 const referencesObj = {
 	100: {
 		category: 'References',
@@ -377,12 +399,12 @@ const referencesObj = {
 	},
 };
 
-// FUNCTION
+
+// 🟢 miscellaneous clicked function
 function referencesClicked(key){
   chosenCategoryObj = referencesObj;
   pointValueChosen = key;
   let ansArr = chosenCategoryObj[pointValueChosen].answers;
-  console.log(`ans array ${ansArr}`)
 
   qCategory.innerText = (chosenCategoryObj[key].category);
   qQuestion.innerText = chosenCategoryObj[key].question;
@@ -391,13 +413,10 @@ function referencesClicked(key){
   ans2.value = ansArr[1].value;
   ans3.value = ansArr[2].value;
   ans4.value = ansArr[3].value;
-
-
-  console.log(`pointValueChosen: ${pointValueChosen}`)
-  console.log(`Chosen Ans ${chosenAnswer}`)
 };
 
-// EVENT LISTENERS
+
+// main game references category event listeners
 rf100.addEventListener('click', (event) =>{
   referencesClicked(100)
 	categoryClick(event);
@@ -415,19 +434,20 @@ rf400.addEventListener('click', (event) => {
 	categoryClick(event);
 });
 
-// 🟢 TEST REFERENCES CLICKED FUNC
-// referencesClicked(100)
 
-// ---------------------------------------
+// ==========================================================================
 
-// ==== CHARACTERS BLOCK ====
+// CHARACTERS CATEGORY
 
+
+// characters buttons
 const jer100 = document.querySelector('#jer100');
 const jer200 = document.querySelector('#jer200');
 const jer300 = document.querySelector('#jer300');
 const jer400 = document.querySelector('#jer400');
 
-// JERR-ICTERS
+
+// miscellaneous Q & A object
 const charObj = {
 	100: {
 		category: 'CHARACTERS',
@@ -471,11 +491,11 @@ const charObj = {
 	},
 };
 
+// 🟢 miscellaneous clicked function
 function charactersClicked(key){
     chosenCategoryObj = charObj;
 		pointValueChosen = key;
 		let ansArr = chosenCategoryObj[pointValueChosen].answers;
-		console.log(`ans array ${ansArr}`);
 
 		qCategory.innerText = chosenCategoryObj[key].category;
 		qQuestion.innerText = chosenCategoryObj[key].question;
@@ -485,9 +505,10 @@ function charactersClicked(key){
 		ans3.value = ansArr[2].value;
 		ans4.value = ansArr[3].value;
 
-		console.log(`pointValueChosen: ${pointValueChosen}`);
-		console.log(`Chosen Ans ${chosenAnswer}`);
 }
+
+
+// main game characters category event listeners
 jer100.addEventListener('click', (event) => {
 	charactersClicked(100);
 	categoryClick(event);
@@ -506,17 +527,20 @@ jer400.addEventListener('click', (event) => {
 	categoryClick(event);
 });
 
-// 🟢 CHARACTER BLOCK TEST
-// charactersClicked(100)
 
-// ----------------------------------------
+// ==========================================================================
 
-// MORT-SCELLANEOUS
+
+// miscellaneous block
+
+
 const mort100 = document.querySelector('#mort100')
 const mort200 = document.querySelector('#mort200')
 const mort300 = document.querySelector('#mort300')
 const mort400 = document.querySelector('#mort400')
 
+
+// miscellaneous Q & A object
 const miscObj = {
 	100: {
 		category: 'MISCELLANEOUS',
@@ -560,11 +584,12 @@ const miscObj = {
 	},
 };
 
+
+// 🟢 miscellaneous clicked function
 function miscClicked(key){
     chosenCategoryObj = miscObj;
 		pointValueChosen = key;
 		let ansArr = chosenCategoryObj[pointValueChosen].answers;
-		console.log(`ans array ${ansArr}`);
 
 		qCategory.innerText = chosenCategoryObj[key].category;
 		qQuestion.innerText = chosenCategoryObj[key].question;
@@ -573,11 +598,10 @@ function miscClicked(key){
 		ans2.value = ansArr[1].value;
 		ans3.value = ansArr[2].value;
 		ans4.value = ansArr[3].value;
-
-		console.log(`pointValueChosen: ${pointValueChosen}`);
-		console.log(`Chosen Ans ${chosenAnswer}`);
 }
 
+
+// main game miscellaneous category event listeners
 mort100.addEventListener('click', (event) => {
 	miscClicked(100);
 	categoryClick(event);
@@ -595,6 +619,3 @@ mort400.addEventListener('click', (event) => {
 	miscClicked(400);
 	categoryClick(event);
 });
-
-// 🟢 MISC CLICKED FUNC TEST
-// miscClicked(100)
