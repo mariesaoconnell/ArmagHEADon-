@@ -106,7 +106,7 @@ function gameOver(){
 // 🟢 QUESTIONS LEFT FUNCTION -- DETERMINES IF ALL QUESTIONS HAVE BEEN ANSWERED
 function questionsLeftFunc(){
 	if(questionsLeft<=0){
-		alert('gameover!')
+		gameOver();
 	}
 	console.log(questionsLeft)
 }
@@ -266,42 +266,43 @@ const j400Btn = document.querySelector('#j400');
 const jokesObj = {
 	100: {
 		category: 'Jokes',
-		question: 'Question 1',
+		question:
+			'This multi-episode joke is famous for it\'s seemingly improvised commercials and TV Shows.',
 		answers: [
-			{ value: 'Answer 1', isCorrect: false },
-			{ value: 'Answer 2', isCorrect: true },
-			{ value: 'Answer 3', isCorrect: false },
-			{ value: 'Answer 4', isCorrect: false },
+			{ value: 'Intergallactic Cable', isCorrect: false },
+			{ value: 'Interdimensional Cable', isCorrect: true },
+			{ value: 'Interplanetary Cable', isCorrect: false },
+			{ value: 'The LifeTime Network', isCorrect: false },
 		],
 	},
 	200: {
 		category: 'Jokes',
-		question: 'Question 2',
+		question: 'This famous Rick catch phrase means, "I am in great pain"',
 		answers: [
-			{ value: 'Answer 1', isCorrect: false },
-			{ value: 'Answer 2', isCorrect: true },
-			{ value: 'Answer 3', isCorrect: false },
-			{ value: 'Answer 4', isCorrect: false },
+			{ value: '"Ricky-Ticky-Taffy"', isCorrect: false },
+			{ value: '"I\'m Pickle Rick!"', isCorrect: true },
+			{ value: '"And that\'s the waaaAAAAaaaaaAAAay the news goes"', isCorrect: false },
+			{ value: '"Wubba-lubba-Dub-Dub"', isCorrect: false },
 		],
 	},
 	300: {
 		category: 'Jokes',
-		question: 'Question 3',
+		question: 'In what seemed like a one off joke from an episode Rick-Shank Rick-Demption Rick gives up his ability to improv and can only adlib using the following phrase:',
 		answers: [
-			{ value: 'Answer 1', isCorrect: false },
-			{ value: 'Answer 2', isCorrect: true },
-			{ value: 'Answer 3', isCorrect: false },
-			{ value: 'Answer 4', isCorrect: false },
+			{ value: '"I gotta go see a man about a horse"', isCorrect: false },
+			{ value: '"I don\'t want to be here anymore"', isCorrect: false },
+			{ value: '"I gotta go take a 💩</colorful>"', isCorrect: true },
+			{ value: '"No Thanks, I\'m busy"', isCorrect: false },
 		],
 	},
 	400: {
 		category: 'Jokes',
-		question: 'Question 4',
+		question: 'In the episode "Close Rick-Counters of the Rick Kind" Jerry makes a friend whose picture can be seen framed hidden away in the garage in a later episode',
 		answers: [
-			{ value: 'Answer 1', isCorrect: false },
-			{ value: 'Answer 2', isCorrect: true },
-			{ value: 'Answer 3', isCorrect: false },
-			{ value: 'Answer 4', isCorrect: false },
+			{ value: 'Doofus Rick', isCorrect: true },
+			{ value: 'Cousin Nicky', isCorrect: false },
+			{ value: 'Sleepy Gary', isCorrect: false },
+			{ value: 'Squanchy', isCorrect: false },
 		],
 	},
 };
@@ -359,42 +360,42 @@ const rf400 = document.querySelector('#rf400');
 const referencesObj = {
 	100: {
 		category: 'References',
-		question: 'Question 1',
+		question: 'When Rick is dating the Hive Mind known as Unity, he, at one point has her imitate the entire cast of this other Dan Harmon show, while describing the show\'s life cycle.',
 		answers: [
-			{ value: 'Answer 1', isCorrect: false },
-			{ value: 'Answer 2', isCorrect: true },
-			{ value: 'Answer 3', isCorrect: false },
-			{ value: 'Answer 4', isCorrect: false },
+			{ value: 'Community', isCorrect: true },
+			{ value: 'Pokemon', isCorrect: false },
+			{ value: 'Jersey Shore', isCorrect: false },
+			{ value: 'Squid Game', isCorrect: false },
 		],
 	},
 	200: {
 		category: 'References',
-		question: 'Question 2',
+		question: 'Referenced in a Christmas Themed episode, this test gauges the active presence of female actresses in hollywood films',
 		answers: [
-			{ value: 'Answer 1', isCorrect: false },
-			{ value: 'Answer 2', isCorrect: true },
-			{ value: 'Answer 3', isCorrect: false },
-			{ value: 'Answer 4', isCorrect: false },
+			{ value: 'The Firmi Paradox', isCorrect: false },
+			{ value: 'The Heisenburg\'s Uncertainty Principle', isCorrect: false },
+			{ value: 'The Bechdel Test', isCorrect: true },
+			{ value: 'The Strawman Fallacy', isCorrect: false },
 		],
 	},
 	300: {
 		category: 'References',
-		question: 'Question 3',
+		question: 'An Inter-Dimensional cable commercial stars eight separate versions of this actor',
 		answers: [
-			{ value: 'Answer 1', isCorrect: false },
-			{ value: 'Answer 2', isCorrect: true },
-			{ value: 'Answer 3', isCorrect: false },
-			{ value: 'Answer 4', isCorrect: false },
+			{ value: 'Rob Schneider', isCorrect: false },
+			{ value: 'Nathan Fillion', isCorrect: false },
+			{ value: 'Elon Tusk', isCorrect: false },
+			{ value: 'Jan Michael Vincent', isCorrect: true },
 		],
 	},
 	400: {
 		category: 'References',
-		question: 'Question 4',
+		question: 'In Season 6, the family receives the most "realistic" gaming console in the universe. In the fighting game, one of the characters that can be seen is a reference to another Dan Harmon character in the fan favorite show "Community".',
 		answers: [
-			{ value: 'Answer 1', isCorrect: false },
-			{ value: 'Answer 2', isCorrect: true },
-			{ value: 'Answer 3', isCorrect: false },
-			{ value: 'Answer 4', isCorrect: false },
+			{ value: 'Jeff Winger', isCorrect: false },
+			{ value: 'Kick Puncher', isCorrect: true },
+			{ value: 'Professor Chang', isCorrect: false },
+			{ value: 'Star Burns', isCorrect: false },
 		],
 	},
 };
@@ -447,46 +448,48 @@ const jer300 = document.querySelector('#jer300');
 const jer400 = document.querySelector('#jer400');
 
 
+const charImg = document.querySelector('#q-img');
+
 // miscellaneous Q & A object
 const charObj = {
 	100: {
 		category: 'CHARACTERS',
-		question: 'Question 1',
+		question: './assets/characters/fart.gif',
 		answers: [
-			{ value: 'Answer 1', isCorrect: false },
-			{ value: 'Answer 2', isCorrect: true },
-			{ value: 'Answer 3', isCorrect: false },
-			{ value: 'Answer 4', isCorrect: false },
+			{ value: 'Shiny Cloud', isCorrect: false },
+			{ value: 'Fart', isCorrect: true },
+			{ value: 'Rick', isCorrect: false },
+			{ value: 'Jarmaine Clemmons', isCorrect: false },
 		],
 	},
 	200: {
 		category: 'CHARACTERS',
-		question: 'Question 2',
+		question: './assets/characters/mrmeeseeks.gif',
 		answers: [
-			{ value: 'Answer 1', isCorrect: false },
-			{ value: 'Answer 2', isCorrect: true },
-			{ value: 'Answer 3', isCorrect: false },
-			{ value: 'Answer 4', isCorrect: false },
+			{ value: 'Blueman Group Member', isCorrect: false },
+			{ value: 'Jerry', isCorrect: true },
+			{ value: 'Mr.Meeseeks', isCorrect: true },
+			{ value: 'Existence is Pain', isCorrect: true },
 		],
 	},
 	300: {
 		category: 'CHARACTERS',
-		question: 'Question 3',
+		question: './assets/characters/scaryterry.gif',
 		answers: [
-			{ value: 'Answer 1', isCorrect: false },
-			{ value: 'Answer 2', isCorrect: true },
-			{ value: 'Answer 3', isCorrect: false },
-			{ value: 'Answer 4', isCorrect: false },
+			{ value: 'Freddy Krueger', isCorrect: false },
+			{ value: 'Man with Knives for fingers', isCorrect: false },
+			{ value: 'Jason', isCorrect: false },
+			{ value: 'Scary Terry', isCorrect: true },
 		],
 	},
 	400: {
 		category: 'CHARACTERS',
-		question: 'Question 4',
+		question: './assets/characters/snuffles.gif',
 		answers: [
-			{ value: 'Answer 1', isCorrect: false },
-			{ value: 'Answer 2', isCorrect: true },
-			{ value: 'Answer 3', isCorrect: false },
-			{ value: 'Answer 4', isCorrect: false },
+			{ value: 'Morty\'s Dog', isCorrect: false },
+			{ value: 'Snuffles', isCorrect: true },
+			{ value: 'The dog that Jerry got mad at for peeing on the rug', isCorrect: true },
+			{ value: 'Snowball', isCorrect: true },
 		],
 	},
 };
@@ -496,15 +499,13 @@ function charactersClicked(key){
     chosenCategoryObj = charObj;
 		pointValueChosen = key;
 		let ansArr = chosenCategoryObj[pointValueChosen].answers;
-
 		qCategory.innerText = chosenCategoryObj[key].category;
-		qQuestion.innerText = chosenCategoryObj[key].question;
+		charImg.src = chosenCategoryObj[key].question;
 
 		ans1.value = ansArr[0].value;
 		ans2.value = ansArr[1].value;
 		ans3.value = ansArr[2].value;
 		ans4.value = ansArr[3].value;
-
 }
 
 
@@ -544,42 +545,42 @@ const mort400 = document.querySelector('#mort400')
 const miscObj = {
 	100: {
 		category: 'MISCELLANEOUS',
-		question: 'Question 1',
+		question: 'What\'s Rick\'s lastname?',
 		answers: [
-			{ value: 'Answer 1', isCorrect: false },
-			{ value: 'Answer 2', isCorrect: true },
-			{ value: 'Answer 3', isCorrect: false },
-			{ value: 'Answer 4', isCorrect: false },
+			{ value: 'Anderson', isCorrect: false },
+			{ value: 'Ross', isCorrect: false },
+			{ value: 'Martin', isCorrect: false },
+			{ value: 'Sanchez', isCorrect: true },
 		],
 	},
 	200: {
 		category: 'MISCELLANEOUS',
-		question: 'Question 2',
+		question: 'The Schezuan sauce that Rick is obsessed with is a real life promotional sauce offered by McDonald\'s the the hit children\'s movie...',
 		answers: [
-			{ value: 'Answer 1', isCorrect: false },
-			{ value: 'Answer 2', isCorrect: true },
-			{ value: 'Answer 3', isCorrect: false },
-			{ value: 'Answer 4', isCorrect: false },
+			{ value: 'Aladin', isCorrect: false },
+			{ value: 'Mulan', isCorrect: true },
+			{ value: 'Veggie Tales', isCorrect: false },
+			{ value: 'The Brave Little Toaster', isCorrect: false },
 		],
 	},
 	300: {
 		category: 'MISCELLANEOUS',
-		question: 'Question 3',
+		question: 'What universe if the Rick that we follow originally from?',
 		answers: [
-			{ value: 'Answer 1', isCorrect: false },
-			{ value: 'Answer 2', isCorrect: true },
-			{ value: 'Answer 3', isCorrect: false },
-			{ value: 'Answer 4', isCorrect: false },
+			{ value: 'C-137', isCorrect: true },
+			{ value: 'Eee-arth', isCorrect: false },
+			{ value: 'The Milkyway', isCorrect: false },
+			{ value: 'G-137', isCorrect: false },
 		],
 	},
 	400: {
 		category: 'MISCELLANEOUS',
-		question: 'Question 4',
+		question: 'In the episode \'The Ricks Must Be Crazy\', Rick reveals he\'s created a microverse, a tiny universe, whose entire existence is to power his...',
 		answers: [
-			{ value: 'Answer 1', isCorrect: false },
-			{ value: 'Answer 2', isCorrect: true },
-			{ value: 'Answer 3', isCorrect: false },
-			{ value: 'Answer 4', isCorrect: false },
+			{ value: 'Portal Gun', isCorrect: false },
+			{ value: 'Plumbus', isCorrect: false },
+			{ value: 'Car', isCorrect: true },
+			{ value: 'Flashlight', isCorrect: false },
 		],
 	},
 };

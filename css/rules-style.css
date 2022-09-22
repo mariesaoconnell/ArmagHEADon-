@@ -6,11 +6,14 @@ body {
   max-width: 1000px;
   height: 100vh;
   margin: 0 auto;
+  font-family: 'Amatic SC', cursive;
 }
 
 h1 {
+  font-family: 'Amatic SC', cursive;
   color: white;
   text-align: center;
+  size: 5em;
 }
 
 #mainRules{
@@ -47,9 +50,17 @@ main{
 }
 
 #nxtBtn {
-height: 40px;
+/* height: 40px; */
 width: 300px;
-font-size: 30px;
+font-size: 40px;
+background: none;
+border: none;
+color: white;
+}
+
+#nxtBtn:hover {
+  color:lime;
+  cursor: pointer;
 }
 
 #gameStart {
@@ -57,18 +68,22 @@ font-size: 30px;
   padding-top: 20px;
 }
 
-
-/* animation */
 #gameStart {
-  animation: pulsate 1.5s infinite alternate;
   color: #fff;
+  font-size: 40px;
 }
+
+#startAnchor:hover{
+  color: lime;
+}
+
 
 h1 {
   font-size: 4.2rem;
+  animation: pulsate 1.5s infinite alternate;
 }
 
-/* Flickering animation */
+
 @keyframes pulsate {
   100% {
     text-shadow:

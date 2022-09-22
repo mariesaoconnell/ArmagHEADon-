@@ -4,30 +4,30 @@ body {
   background-image: url('https://i.ibb.co/6tWj14C/Screen-Shot-2022-09-20-at-8-27-10-PM.png');
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   max-width: 1200px;
   display: flex;
   flex-direction: column;
   height: 100vh;
   margin: 0 auto;
+  font-family: 'Amatic SC', cursive;
 }
 
 #heading{
-  /* margin: auto; */
+  margin: auto;
   text-align: center;
   color: white;
   font-size: large;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 30px;
+  padding: 0px;
+  font-size: 30px;
 }
 
 /* ================================== MAIN GAME STYLING ===================================*/
 
 main {
-  margin: 60px auto;
+  /* margin: 60px auto; */
   background-color: rgb(48, 0, 93, .96);
-
+  height: 100vh;
   width: 1200px;
   border-radius: 50px;
   box-shadow: 0 0 30px 30px rgb(48,0,93);
@@ -38,14 +38,16 @@ main {
   color: white;
   background-color: black;
   width: 1000px;
-  height: 800px;
-  padding: 20px;
+  height: 600px;
+  padding: 15px;
   border: solid 4px lime;
   border-radius: 50px;
   table-layout: fixed;
   box-shadow: inset 0 0 40px greenyellow;
 }
-
+th {
+  font-size: 30px;
+}
 th, td {
   border: solid 2px lime;
   text-align: center;
@@ -54,9 +56,10 @@ th, td {
 td>input {
   height: 100%;
   width: 100%;
-  font-size: 25px;
+  font-size: 30px;
   background-color: black;
   color:white;
+  font-family: 'Rubik Dirt', cursive;
 }
 .mainBtn:hover{
   background-image: url('https://i.ibb.co/D8WrkHT/petro-kosariekov-portal-gun-rick-and-morty2-2.gif');
@@ -64,6 +67,8 @@ td>input {
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center center;
+  color:black;
+  cursor: pointer;
 }
 
 footer {
@@ -75,7 +80,7 @@ footer {
 }
 
 #footDiv {
-  font-size: 30px;
+  font-size: 40px;
   padding-left: 40px;
   padding-right: 40px;
   display: flex;
@@ -104,7 +109,7 @@ footer {
   margin-left: auto;
   margin-right: auto;
   margin-top: -30px;
-  padding-top: 40px;
+  /* padding-top: 40px; */
   width:1200px;
   height: 100vh;
   display: flex;
@@ -112,24 +117,25 @@ footer {
   border-radius: 25px;
   box-shadow: 0 0 30px 30px rgb(48, 0, 93);
   visibility: hidden;
+  justify-content: space-evenly;
 }
 
 #qCategory {
   color:white;
-  height: 20%;
+  /* height: 20%; */
   text-align: center;
-  font-size: 40px;
-  padding-top: 20px;
+  font-size: 60px;
+  /* padding-top: 20px; */
 }
 #qQuestion{
   color: white;
-  font-size: 20px;
-  height: 30%;
+  font-size: 40px;
+  padding: 0 40px 0 40px;
   text-align: center;
 }
 
 #qAnswers {
-  height: 50%;
+  /* height: 50%; */
 }
 
 #qTable{
@@ -153,6 +159,11 @@ footer {
 box-sizing: border-box;
 width:100%;
 border: solid 5px lime;
+cursor: pointer;
+}
+
+#q-img{
+  height:400px;
 }
 
 /* REACTION DIV */
@@ -161,7 +172,7 @@ border: solid 5px lime;
   background-color: black;
   color: white;
   width: 1200px;
-  height: 850px;
+  height: 100%;
   border-radius: 50px 50px 0 0;
   box-shadow: 0 0 50px 30px rgb(0, 0, 0);
   margin: auto;
@@ -172,12 +183,19 @@ border: solid 5px lime;
   position: absolute;
 }
 
-#right-answer-image{
+#right-answer-image, #wrong-answer-image{
   margin: auto;
+  width: 75%;
+  max-height: 75%;
 }
 
-#right-answer-p {
-  padding: 40px;
+#right-answer-p, #wrong-answer-p {
+  padding-top: 40px;
+  font-size: 30px;
+}
+#right-answer-react>h1, #wrong-answer-react>h1 {
+  margin-bottom: 60px;
+  font-size: 60px;
 }
 
 /* =================================== GAME OVER STYLING ===================================*/

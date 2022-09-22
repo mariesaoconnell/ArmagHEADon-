@@ -7,8 +7,9 @@ body{
   width: 1000px;
   text-align: center;
   margin: auto;
-
+  font-family: 'Rubik Dirt', cursive;
 }
+
 #startContainer{
   display: flex;
   flex-direction: column;
@@ -16,15 +17,20 @@ body{
   text-decoration: none;
 }
 
+iframe {
+  margin: auto;
+}
+
 a {
   text-decoration: none;
   color: white;
   padding: 20px;
-  font-size: 20px;
+  font-size: 40px;
 }
 
 /* animation */
 h1 {
+    font-family: 'Amatic SC', cursive;
     animation: pulsate 1.5s infinite alternate;
     color: #fff;
     font-size: 4.2rem;
