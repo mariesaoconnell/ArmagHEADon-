@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Rubik+Dirt&display=swap"
+			rel="stylesheet"
+		/>
+
+ <!-- LINK STYLE SHEET -->
+  <link rel="stylesheet" href="./css/style.css">
+
+<!-- LINK SCRIPT -->
+  <script defer src="./javascript/script.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Armagheadon the Game!</title>
+</head>
+
+<body>
+
+  <!-- GAME OVER DIV -->
+  <div id="game-over-div">
+    <p id="game-over-p">GAME OVER!</p>
+    <div><img id="go-img" alt="Rick and Morty in Portal Gif" src="https://i.ibb.co/rs4Tyfc/rick-and-morty-rick.gif"></div>
+    <div id="go-footer-div">
+      <p id="game-over-score">Final Score: <span id="game-over-score-value"></span></p>
+      <p> <a href="./index.html">Play Again!</a></p>
+    </div>
+  </div>
+
+
+  <main>
+    <!-- CORRECT ANSWER REACTION DIV -->
+    <div id="right-answer-react">
+      <p id="right-answer-p">Returning to Main Menu in: <span id="right-countdown"></span></p>
+      <img id="right-answer-image" atl="Right Answer Image" src="">
+      <h1>Correct!</h1>
+    </div>
+
+    <!-- WRONG ANSWER REACTION DIV -->
+    <div id="wrong-answer-react">
+      <p id="wrong-answer-p">Returning to Main Menu in: <span id="wrong-countdown"></span></p>
+      <img id="wrong-answer-image" atl="Wrong Answer Image" src="">
+      <h1>Better Luck Next Time!</h1>
+    </div>
+
+
+    <!-- QUESTION STAGE > CATEGORY > QUESTION > ANSWER -->
+    <div id="questionDiv">
+      <div id="qCategory"> </div>
+      <div id="qQuestion"> <img id="q-img"> </div>
+      <div id="qAnswers">
+
+        <table id="qTable">
+          <tr>
+            <td class="answerTd"><input class="answerBttn" id="ans1" type="button" value="test">
+            <td class="answerTd"><input class="answerBttn" id="ans2" type="button" value=""></td>
+          </tr>
+          <tr>
+            <td class="answerTd"><input class="answerBttn" id="ans3" type="button" value=""></td>
+            <td class="answerTd"><input class="answerBttn" id="ans4" type="button" value=""></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+
+    <!-- MAIN GAME STAGE -->
+    <div id="gameStage">
+        <div id="heading">
+    <h1> ArmagHEADon!</h1>
+  </div>
+      <table id="mainTable">
+        <tr>
+          <th> RICK-CURRING JOKES </th>
+          <th> RICK-FRENCES </th>
+          <th> JERR-ICTERS</th>
+          <th> MORT-SCELLANEOUS</th>
+        </tr>
+        <tr>
+          <td> <input class="mainBtn" id="j100" type="button" value="100 Points" ></td>
+          <td> <input class="mainBtn" id="rf100" type="button" value="100 Points"></td>
+          <td> <input class="mainBtn" id="jer100" type="button" value="100 Points"></td>
+          <td> <input class="mainBtn" id="mort100" type="button" value="100 Points"></td>
+        </tr>
+        <tr>
+          <td> <input class="mainBtn" id="j200" type="button" onclick="" value="200 Points"></td>
+          <td> <input class="mainBtn" id="rf200" type="button" onclick="" value="200 Points"></td>
+          <td> <input class="mainBtn" id="jer200" type="button" onclick="" value="200 Points"></td>
+          <td> <input class="mainBtn" id="mort200"type="button" onclick="" value="200 Points"></td>
+        </tr>
+        <tr>
+          <td> <input class="mainBtn" id="j300" type="button" value="300 Points"></td>
+          <td> <input class="mainBtn" id="rf300" type="button" onclick="" value="300 Points"></td>
+          <td> <input class="mainBtn" id="jer300" type="button" onclick="" value="300 Points"></td>
+          <td> <input class="mainBtn" id="mort300" type="button" onclick="" value="300 Points"></td>
+        </tr>
+        <tr>
+          <td> <input class="mainBtn" id="j400" type="button" onclick="" value="400 Points"></td>
+          <td> <input class="mainBtn" id="rf400" type="button" onclick="" value="400 Points"></td>
+          <td> <input class="mainBtn" id="jer400" type="button" onclick="" value="400 Points"></td>
+          <td> <input class="mainBtn" id="mort400" type="button" onclick="" value="400 Points"></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- FOOTER DIV > SCORE > RETURN TO MAIN MENU -->
+    <div id="footDiv">
+      <p>Player Score: <span id="playerScoreValue"></span></p>
+      <p>
+        <a href="./index.html">EXIT</a>
+      </p>
+    </div>
+
+  </main>
+</body>
+</html>
