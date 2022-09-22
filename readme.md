@@ -18,6 +18,10 @@ ArmagHEADon is a Jeopardy! style quiz game, themed after Dan Harmon's <i>Rick an
 ![Answer Wrong](./assets/gameImages/answerReactionWrong.png)
 ![Game Over](./assets/gameImages/gameOver.png)
 
+## Wireframe
+
+![Original Wireframe](./assets/gameImages/wireFrame.png)
+
 ## Breakdown of Technologies Used
 
 ![Breakdown of Technologies](./assets/gameImages/gameTechnologiesBreakdown.png)
@@ -41,13 +45,13 @@ If downloading from GitHub:
 
 Out of space? Click the link below for the web based version!
 
-## User Stories
+## Original User Stories
 
-AAU I want to click start in a start menu
-AAU I want to see a rules page
-AAU I want to choose my own category
-AAU I want to see my score update in real time
-AAU I want to be able to exit at any time
+- AAU I want to click start in a start menu
+- AAU I want to see a rules page
+- AAU I want to choose my own category
+- AAU I want to see my score update in real time
+- AAU I want to be able to exit at any time
 
 ## MVP Goals
 
@@ -63,6 +67,20 @@ AAU I want to be able to exit at any time
 
 ✅ - Countdown timer (On return to Main)
 
-## Wireframe
 
-![Original Wireframe](./assets/gameImages/wireFrame.png)
+##  Future Game Goals
+
+- Multiplayer options
+  - VS Computer
+  - VS Friends
+- Countdown Timer while answering questions
+- Audio
+
+## Areas of Improvement:
+
+- Now that the JS is complete, I'd like to revisit a lot of the functions in the script.js file and <i>DRY</i> up the code. <br>
+
+  Examples include:
+  - Iterating through images on the <i>answer reaction</i> overlays
+  - Further research on optimal screen menu switching (Between Start, Rules, Main Game, Questions, Answer Reactions, and Game Over)
+  - Further research on optimal countdown functions
