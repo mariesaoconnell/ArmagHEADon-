@@ -74,7 +74,6 @@ function questionsLeftFunc(){
 	if(questionsLeft<=0){
 		gameOver();
 	}
-	console.log(questionsLeft)
 }
 
 // 🟢 CORRECT ANSWER REACTION FUNCTION
@@ -136,7 +135,6 @@ function wrongAns(){
 	// count down variable
 	setInterval(() => {
 		wrongCount.innerText = (parseInt(wrongCount.innerText)) - 1;
-		console.log(`wrongCount.innerText ${wrongCount.innerText}`);
 		if (parseInt(wrongCount.innerText) <= 0) {
 			backToMain();
 		}
@@ -153,10 +151,8 @@ function checkAnswer(event){
 	// CHECKS ANSWER BLOCK
   if(chosenAnswer.isCorrect){
 		correctAns();
-    console.log('correct answer')
   } else{
 		wrongAns();
-    console.log('Wrong')
   }
 }
 
@@ -246,9 +242,9 @@ const jokesObj = {
 		question: 'This famous Rick catch phrase means, "I am in great pain"',
 		answers: [
 			{ value: '"Ricky-Ticky-Taffy"', isCorrect: false },
-			{ value: '"I\'m Pickle Rick!"', isCorrect: true },
-			{ value: '"And that\'s the waaaAAAAaaaaaAAAay the news goes"', isCorrect: false },
-			{ value: '"Wubba-lubba-Dub-Dub"', isCorrect: false },
+			{ value: '"I\'m Pickle Rick!"', isCorrect: false },
+			{ value: '"And that\'s the waaaAAAAaaaaaAAA\nay the news goes"', isCorrect: false },
+			{ value: '"Wubba-lubba-Dub-Dub"', isCorrect: true },
 		],
 	},
 	300: {
@@ -257,7 +253,7 @@ const jokesObj = {
 		answers: [
 			{ value: '"I gotta go see a man about a horse"', isCorrect: false },
 			{ value: '"I don\'t want to be here anymore"', isCorrect: false },
-			{ value: '"I gotta go take a 💩</colorful>"', isCorrect: true },
+			{ value: '"I gotta go take a 💩"', isCorrect: true },
 			{ value: '"No Thanks, I\'m busy"', isCorrect: false },
 		],
 	},
@@ -465,7 +461,9 @@ function charactersClicked(key){
     chosenCategoryObj = charObj;
 		pointValueChosen = key;
 		let ansArr = chosenCategoryObj[pointValueChosen].answers;
+
 		qCategory.innerText = chosenCategoryObj[key].category;
+		// qQuestion.innerText='';
 		charImg.src = chosenCategoryObj[key].question;
 
 		ans1.value = ansArr[0].value;

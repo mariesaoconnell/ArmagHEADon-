@@ -1,15 +1,15 @@
 
 ============================= ISSUES =================================
 
-[] -- complete styling of Game Over
+[🟢] -- complete styling of Game Over
 
-[] -- review characters function, issues w object pulling answers in the wrong area
+[🟢] -- review characters function, issues w object pulling answers in the wrong area
 
 [] -- add audio feature?
 
 [] -- readme
 
-[] -- triple check project requirements 
+[] -- triple check project requirements
 
 ============================== GOALS =================================
 
