@@ -27,6 +27,7 @@ ArmagHEADon is a Jeopardy! style quiz game, themed after Dan Harmon's <i>Rick an
 ![Breakdown of Technologies](./assets/gameImages/gameTechnologies2.png)
 
 <i>See Most Accurate Breakdown of Languages used here:</i>
+
 [![wakatime](https://wakatime.com/badge/user/3ece8247-d6e5-4a9c-b26f-fdc2ad0f1dc5/project/04494669-8b25-4076-a964-3d775bdc5e39.svg)](https://wakatime.com/badge/user/3ece8247-d6e5-4a9c-b26f-fdc2ad0f1dc5/project/04494669-8b25-4076-a964-3d775bdc5e39)
 
 - ## Languages Used:
