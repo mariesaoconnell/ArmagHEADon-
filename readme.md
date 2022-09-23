@@ -27,8 +27,10 @@ ArmagHEADon is a Jeopardy! style quiz game, themed after Dan Harmon's <i>Rick an
 ![Breakdown of Technologies](./assets/gameImages/gameTechnologies2.png)
 
 <i>See Most Accurate Breakdown of Languages used here:</i>
+[![wakatime](https://wakatime.com/badge/user/3ece8247-d6e5-4a9c-b26f-fdc2ad0f1dc5/project/97b0da9e-1264-4c3a-912e-9cb46bf373a0.svg)](https://wakatime.com/projects/armagheadon-) +
+[![wakatime](https://wakatime.com/badge/user/3ece8247-d6e5-4a9c-b26f-fdc2ad0f1dc5/project/04494669-8b25-4076-a964-3d775bdc5e39.svg)](https://wakatime.com/projects/armagheadon-) 
 
-[![wakatime](https://wakatime.com/badge/user/3ece8247-d6e5-4a9c-b26f-fdc2ad0f1dc5/project/04494669-8b25-4076-a964-3d775bdc5e39.svg)](https://wakatime.com/badge/user/3ece8247-d6e5-4a9c-b26f-fdc2ad0f1dc5/project/04494669-8b25-4076-a964-3d775bdc5e39)
+(Project Rename threw Wakatime Off, so it began tracking time for the project when it was renamed, which is why there's a badge for the project <b>pre</b>-name change and <b>post</b>-name change.)
 
 - ## Languages Used:
   - JavaScript - <i>Game Mechanics</i>
