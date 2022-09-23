@@ -26,6 +26,9 @@ ArmagHEADon is a Jeopardy! style quiz game, themed after Dan Harmon's <i>Rick an
 
 ![Breakdown of Technologies](./assets/gameImages/gameTechnologiesBreakdown.png)
 
+<i>See Most Accurate Breakdown of Languages used below:</i>
+https://wakatime.com/projects/project1-resub
+
 - ## Languages Used:
   - JavaScript - <i>Game Mechanics</i>
   - CSS - <i>Page Styling</i>
@@ -44,6 +47,8 @@ If downloading from GitHub:
 4. Open main file folder, right click 'start.html' and open with your preferred browser!
 
 Out of space? Click the link below for the web based version!
+
+- https://armagheadon.netlify.app/
 
 ## Original User Stories
 
